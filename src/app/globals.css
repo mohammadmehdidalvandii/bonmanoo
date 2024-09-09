@@ -1,0 +1,59 @@
+/* <<<< Import Reset CSS >>>> */
+@import url(../styles/reset.css);
+/* <<<< Import Reset CSS >>>> */
+
+/* <<<< Import Font >>>> */
+@font-face {
+  font-family: danaMedium;
+  src: url(../../public/fonts/Dana-Medium.woff2) format(woff2);
+}
+@font-face {
+  font-family: danaBold;
+  src: url(../../public/fonts/Dana-Bold.woff2) format(woff2);
+}
+@font-face {
+  font-family: danaBlack;
+  src: url(../../public/fonts/Dana-Black.woff2) format(woff2);
+}
+/* <<<< Import Font >>>> */
+
+/* <<<< Root Variables >>>> */
+:root{
+   --danaMedium : danaMedium;
+   --danaBold: danaBold;
+   --danaBlack : danaBlack;
+
+   --white : #ffffff;
+   --shadow: #F9F9F9;
+   --text-100 : #1D1D1B;
+   --text-200 : #979793;
+   --text-300: #575756;
+   --primary : #009879;
+   --secondary : #E6C498;
+   --success : #505049;
+}
+/* <<<< Root Variables >>>> */
+
+/* <<<< Body >>>> */
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--danaMedium) !important;
+  font-size: 1rem !important;
+}
+/* <<<< Body >>>> */
+
+/* <<<< Containers >>>> */
+.containers{
+  max-width: 84rem; /* 84rem = 1344px*/
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+/* <<<< Containers >>>> */
+/* <<<<  >>>> */
+/* <<<<  >>>> */
+/* <<<<  >>>> */
+/* <<<<  >>>> */
