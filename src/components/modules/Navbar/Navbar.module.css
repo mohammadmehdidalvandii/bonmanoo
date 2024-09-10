@@ -1,0 +1,299 @@
+.navBar{
+    display: block;
+    width: 100%;
+    padding-top: 2rem;
+    background-color: var(--white);
+    box-shadow: 0 0 10px 7px var(--shadow);
+
+}
+.navbar_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* <<<< Navbar search >>>> */
+.navbar_search{
+    display: block;
+}
+.navbar_search_wrapper{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+.navbar_search_wrapper:hover .navbar_search_icon {
+    border-color: var(--primary);
+}   
+.navbar_search_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--text-100);
+    border-radius: 50%;
+    font-size: 1rem;
+    padding: 0.2rem;
+}
+.navbar_search_iconBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    color: var(--text-200);
+}
+.navbar_search_text{
+    font-size: 0.9rem;
+    color: var(--text-200);
+}
+.navbar_search_box{
+    display: block;
+    position: absolute;
+    right: -1500px;
+    top:0;
+    width: 100%;
+    height: 100dvh;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(1px);
+    z-index: 999;
+    transition: 0.7s linear;
+}
+.navbar_search_box_active{
+    display: block;
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 100%;
+    height: 100dvh;
+    z-index: 9999;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(2px);
+    animation: showSearch ease-out  0.5s none;
+}
+.navbar_search_exit{
+    display: block;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    font-size: 2rem;
+    color: var(--text-300);
+    cursor: pointer;
+}
+.navbar_search_inputIconBox{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 700px;
+    height: 2.5rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 7px 1px var(--text-200);
+    padding: 0.1rem;
+    background-color: var(--white);
+    overflow: hidden;
+    cursor: pointer;
+}
+.navbar_search_inputIconBox_icon{
+    font-size: 1.2rem;
+    color: var(--text-200);
+    margin-top: 0.5rem;
+    transition: all 0.3 linear;
+}
+.navbar_search_inputIconBox_icon:hover{
+    color: var(--text-100);
+}
+.navbar_search_inputIconBox_input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-100);
+    padding-right: 0.3rem;
+}
+@keyframes showSearch{
+    0%{
+        right: -1500px;
+    }
+    25%{
+        right: -1125px;
+    }
+    50%{
+        right: -750px;
+    }
+    75%{
+        right: -375px;
+    }
+    100%{
+        right: 0;
+    }
+}
+
+/* <<<< navbar logo - menu >>>> */
+.navbar_menu_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar_menu_items{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.navbar_menu_item{
+    display: block;
+}
+.navbar_item_link{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: var(--text-300);
+    transition: all 0.3s linear;
+    &:hover{
+        color: var(--primary);
+    }
+}
+
+.navbar_item_link_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar_logo{
+    margin: 0 3rem;
+}
+/* <<<< action link >>>> */
+.navbar_action_links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.navbar_action_LoginRegister{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--text-100);
+    color: var(--text-200);
+    border-radius: 50%;
+    padding: 0.3rem;
+    transition: all 0.3s linear;
+    &:hover{
+        border-color: var(--primary);
+    }
+}
+.navbar_action_LoginRegister_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar_action_LoginRegister_iconBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--secondary);
+}
+.navbar_action_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid var(--text-100);
+    color: var(--text-200);
+    border-radius: 50%;
+    padding: 0.3rem;
+    cursor: pointer;
+    background-color: unset;
+    transition: all 0.3s linear;
+    &:hover{
+        border-color: var(--primary);
+    }
+}
+.navbar_action_num{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -0.7rem;
+    right: -0.2rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--white);
+}
+.navbar_action_btn_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar_action_btn_iconBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--secondary);
+}
+.navbar_action_basket{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -1500px;
+    width: 350px;
+    height: 100dvh;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    z-index: 4;
+    transition: all 0.5s linear;
+}
+.navbar_action_basket_active{
+    display: block;
+    position: fixed;
+    width: 350px;
+    height: 100dvh;
+    top: 0;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    left: 0;
+    transition: all 0.5s linear;
+}
+.navbar_basket_title_exit{
+    display: flex;
+    align-items: center;
+    background-color: var(--primary);
+    color: var(--white);
+    height: 70px;
+    padding: 1rem;
+}
+.navbar_basket_icon{
+    display: block;
+    flex-basis: 10%;
+    font-size: 2rem;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    /* &:hover{
+        color: var(--text-100);
+    } */
+}
+.navbar_basket_title{
+    display: block;
+    margin: 0 auto;
+    margin-right: 4rem;
+    text-align: center;
+    font-family: var(--danaBlack);
+    font-size: 3rem;
+}
+.navbar_basket_empty{
+    display: block;
+    margin: 1rem auto;
+    text-align: center;
+    color: red;
+}
