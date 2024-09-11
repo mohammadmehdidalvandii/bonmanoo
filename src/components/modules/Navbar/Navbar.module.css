@@ -170,7 +170,7 @@
 .navbar_search_box{
     display: block;
     position: absolute;
-    right: -1500px;
+    right: -1600px;
     top:0;
     width: 100%;
     height: 100dvh;
@@ -383,6 +383,7 @@
     border-right: 1px solid var(--primary);
     backdrop-filter: blur(10px);
     left: 0;
+    z-index: 4;
     transition: all 0.5s linear;
 }
 .navbar_basket_title_exit{
