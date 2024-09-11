@@ -80,6 +80,16 @@ body{
   visibility: visible;
 }
 /* <<<< Tooltip_down >>>> */
+/* <<<< Swiper Styles >>>> */
+.mySwiper .swiper-button-prev:after,
+.mySwiper .swiper-button-next:after {
+  font-size: 23px !important;
+  color: #979793 !important;
+  font-weight: 1000;
+}
+/* <<<< Swiper Styles >>>> */
+/* <<<<  >>>> */
+/* <<<<  >>>> */
 /* <<<<  >>>> */
 /* <<<<  >>>> */
 /* <<<<  >>>> */
