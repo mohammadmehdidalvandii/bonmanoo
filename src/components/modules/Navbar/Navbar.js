@@ -1,7 +1,7 @@
 "use client"
 import React, {useState } from 'react';
 import style from './Navbar.module.css';
-import { FaHeart, FaSearch, FaTimes, FaUser } from "react-icons/fa";
+import { FaBars, FaHeart, FaSearch, FaTimes, FaUser } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 
@@ -13,6 +13,7 @@ import Image from 'next/image';
 function Navbar() {
     const [isShowSearch , setIsShowSearch] = useState(false);
     const [isShowBasket , setIsShowBasket] = useState(false);
+    const [isShowMenuMobile , setIsShowMenuMobile] = useState(false)
 
 
     // Handler Show Search Logic
@@ -27,16 +28,73 @@ function Navbar() {
     const handlerShowBasket = ()=>{
         setIsShowBasket(true)
     }
-
     const handlerExitShowBasket = ()=>{
         setIsShowBasket(false)
     }
 
+    // Handler Show Menu Mobile
+    const handlerShowMenuMobile = ()=>{
+        setIsShowMenuMobile(true)
+    }
+    const handlerShowMenuMobileExit = ()=>{
+        setIsShowMenuMobile(false)
+    }
 
   return (
     <section className={style.navBar}>
         <div className="containers">
             <div className={style.navbar_wrapper}>
+                <div className={style.navbar_search_menuMobile}>
+                       {/* Navbar Menu Mobile */}
+                   <div className={style.navbar_mobile_wrapper}>
+                    <span className={style.navbar_mobile_icon} onClick={handlerShowMenuMobile}>
+                        <span className={style.navbar_mobile_iconBox}>
+                            <FaBars/>
+                        </span>
+                    </span>
+                    <div className={isShowMenuMobile? style.navbar_mobile_menu_active : style.navbar_mobile_menu}>
+                        <div className="bg-shadow" style={isShowMenuMobile?{display :"block"}:{display:"none"}}></div>
+                        <div className={isShowMenuMobile?style.navbar_mobile_menuWrapper_active : style.navbar_mobile_menuWrapper}>
+                            <div className={style.navbar_mobile_menuLogoExit}>
+                                <span className={style.navbar_mobile_exit} onClick={handlerShowMenuMobileExit}>
+                                    <FaTimes/>
+                                </span>
+                                <Image src='../../assets/images/logo.svg' alt='logo menu' width={250} height={100}/>
+                            </div>
+                            <ul className={style.navbar_mobile_items}>
+                                <li className={style.mobile_item}>
+                                    <Link href="#" className={style.mobile_link}>
+                                        <span className={style.mobile_link_text}>محصولات خانگی</span>
+                                        <span className={style.mobile_link_icon}><IoIosArrowDown/></span>
+                                    </Link>
+                                </li>
+                                <li className={style.mobile_item}>
+                                    <Link href="#" className={style.mobile_link}>
+                                        <span className={style.mobile_link_text}>محصولات هورکا</span>
+                                        <span className={style.mobile_link_icon}><IoIosArrowDown/></span>
+                                    </Link>
+                                </li>
+                                <li className={style.mobile_item}>
+                                    <Link href="#" className={style.mobile_link}>
+                                        <span className={style.mobile_link_text}>مجله بن مانو</span>
+                                        <span className={style.mobile_link_icon}><IoIosArrowDown/></span>
+                                    </Link>
+                                </li>
+                                <li className={style.mobile_item}>
+                                    <Link href="#" className={style.mobile_link}>
+                                        <span className={style.mobile_link_text}>درباره ما</span>
+                                    </Link>
+                                </li>
+                                <li className={style.mobile_item}>
+                                    <Link href="#" className={style.mobile_link}>
+                                        <span className={style.mobile_link_text}>تماس با ما</span>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {/* Navbar Search */}
                 <div className={style.navbar_search}>
                     <div className={style.navbar_search_wrapper}  onClick={handlerShowSearch}>
                         <span className={style.navbar_search_icon}>
@@ -57,6 +115,7 @@ function Navbar() {
                             <input type="text" className={style.navbar_search_inputIconBox_input} placeholder='جستجو ...'/>
                         </div>
                     </div>
+                </div>
                 </div>
                 <div className={style.navbar_menu_logo}>
                     {/* navbar menu right */}
