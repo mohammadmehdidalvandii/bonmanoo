@@ -1,7 +1,7 @@
 "use client"
 import React, {useState } from 'react';
 import style from './Navbar.module.css';
-import { FaSearch, FaTimes, FaUser } from "react-icons/fa";
+import { FaHeart, FaSearch, FaTimes, FaUser } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 
@@ -209,6 +209,13 @@ function Navbar() {
                             </div>
                             <span className={style.navbar_basket_empty}>سبد خرید شما خالی است</span>
                         </div>
+                        <Link href="#" className={style.navbar_action_wishlist}>
+                            <span className={style.navbar_action_wishlist_icon}>
+                                <span className={style.navbar_action_wishlist_iconBox}>
+                                    <FaHeart/>
+                                </span>
+                            </span>
+                    </Link>
                 </div>
             </div>
         </div>
