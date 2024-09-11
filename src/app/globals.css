@@ -44,6 +44,7 @@ body{
   font-size: 1rem !important;
   direction: rtl;
   position: relative;
+  overflow-x: hidden;
 }
 /* <<<< Body >>>> */
 
@@ -84,10 +85,12 @@ body{
 /* <<<<  >>>> */
 /* <<<<  >>>> */
 /* <<<<  >>>> */
-.model_parent{
+.bg-shadow{
   display: block;
   width: 100%;
-  height: 200dvh;
+  height: 100dvh;
+  top: 0;
   position: absolute;
-  background-color: rgba(0,0,0,0.11);
+  background-color: rgba(0,0,0,0.75);
+  z-index: 1;
 }
