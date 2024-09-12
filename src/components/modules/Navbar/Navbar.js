@@ -1,5 +1,5 @@
 "use client"
-import React, {useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import style from './Navbar.module.css';
 import { FaBars, FaHeart, FaSearch, FaTimes, FaUser } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
@@ -10,10 +10,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 
+
 function Navbar() {
     const [isShowSearch , setIsShowSearch] = useState(false);
     const [isShowBasket , setIsShowBasket] = useState(false);
-    const [isShowMenuMobile , setIsShowMenuMobile] = useState(false)
+    const [isShowMenuMobile , setIsShowMenuMobile] = useState(false);
+    const [fixToTop ,  setFixToTop] = useState(false);
+
 
 
     // Handler Show Search Logic
@@ -40,8 +43,23 @@ function Navbar() {
         setIsShowMenuMobile(false)
     }
 
+    // Navbar Scroll Fixed ToTop
+    useEffect(()=>{
+        const fixNavbarToTop = ()=>{
+            const currentScroll = window.scrollY ;
+            if(currentScroll > 100){
+                setFixToTop(true);
+            }else{
+                setFixToTop(false);
+            }
+        };
+
+        window.addEventListener("scroll", fixNavbarToTop);
+        return ()=> window.removeEventListener("scroll" , fixNavbarToTop)
+    },[])
+
   return (
-    <section className={style.navBar}>
+    <section className={fixToTop? style.navbar_fixed : style.navBar}>
         <div className="containers">
             <div className={style.navbar_wrapper}>
                 <div className={style.navbar_search_menuMobile}>
