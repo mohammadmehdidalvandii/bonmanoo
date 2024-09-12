@@ -77,7 +77,7 @@ function Navbar() {
                                 <span className={style.navbar_mobile_exit} onClick={handlerShowMenuMobileExit}>
                                     <FaTimes/>
                                 </span>
-                                <Image src='../../assets/images/logo.svg' alt='logo menu' width={250} height={100}/>
+                                <Image src='/assets/images/logo.svg' alt='logo menu' width={250} height={100}/>
                             </div>
                             <ul className={style.navbar_mobile_items}>
                                 <li className={style.mobile_item}>
