@@ -104,3 +104,18 @@ body{
   background-color: rgba(0,0,0,0.75);
   z-index: 1;
 }
+.showMore{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 200px;
+  height: 2.5rem;
+  border-radius: 1rem;
+  background-color: var(--primary);
+  color: var(--white);
+  transition: all 0.3s linear;
+  &:hover{
+       background-color: var(--secondary);
+  }
+}
