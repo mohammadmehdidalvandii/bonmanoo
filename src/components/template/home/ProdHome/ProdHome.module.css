@@ -21,39 +21,3 @@
     margin-top: 2rem;
 }
 
-.prodHome_navigation_links{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-}
-.prodHome_navigation_btn{
-    display: flex;
-    align-items: center;
-    gap: 10px;  
-}
-.navButtonNext{
-    display: block;
-    outline:none;
-    border:none;
-    background-color: unset;
-    font-size: 1.5rem;
-    color: var(--text-200);
-    transition: all 0.3s linear;
-    &:hover{
-        color: var(--text-100);
-    }
-}
-.navButtonPrev{
-    display: block;
-    outline:none;
-    border:none;
-    background-color: unset;
-    font-size: 1.5rem;
-    color: var(--text-200);
-    transition: all 0.3s linear;
-    &:hover{
-        color: var(--text-100);
-    }
-}

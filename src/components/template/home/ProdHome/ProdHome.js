@@ -92,9 +92,9 @@ function ProdHome() {
                           </Swiper>
                             </div>
                             <div className="col-12">
-                                <div className={style.prodHome_navigation_links}>
-                                    <div className={style.prodHome_navigation_btn}>
-                                        <button className={style.navButtonNext}
+                                <div className="navigation_links">
+                                    <div className="navigation_btn">
+                                        <button className="navButtonNext"
                                              onClick={() =>
                                                 {
                                                     if (swiperRef.current) {
@@ -105,7 +105,7 @@ function ProdHome() {
                                         >
                                             <IoIosArrowForward/> 
                                         </button>
-                                        <button className={style.navButtonPrev}
+                                        <button className="navButtonPrev"
                                              onClick={() => {
                                                 if (swiperRef.current) {
                                                   swiperRef.current.swiper.slidePrev();
