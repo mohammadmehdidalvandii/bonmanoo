@@ -1,0 +1,75 @@
+.prodHurka{
+    display: block;
+    width: 100%;
+    margin-top: 5rem;
+}
+.prodHurka_wrapper{
+    display: block;
+    width: 100%;
+    margin-top: 5rem;
+}
+.prodHurka_title{
+    display: block;
+    font-family: var(--danaBlack);
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+.prodHurka_items{
+    display: block;
+    margin-top: 2rem;
+}
+.prodHurka_item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.prodHurka_item_boxIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+}
+.prodHurka_item_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    padding: 0.3rem;
+    background-color: var(--primary);
+    border: 1px solid var(--white);
+    border-radius: 50%;
+}
+.prodHurka_content{
+    display: block;
+    margin-right: 0.5rem;
+}
+.prodHurka_content_title{
+    display: block; 
+    font-family: var(--danaBold);
+    font-size: 1.3rem;
+    color: var(--text-100);
+}
+.prodHurka_content_text{
+    display: block;
+    font-size: 1rem;
+    color: var(--text-200);
+}
+.prodHurka_title_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.prodHurka_buttons{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+.prodHurka_products{
+    display: block;
+    margin-top: 2rem;
+}
