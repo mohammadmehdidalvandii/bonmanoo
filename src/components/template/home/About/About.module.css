@@ -1,0 +1,38 @@
+.aboutMain{
+    display: block;
+    width: 100%;
+    margin-top: 5rem;
+}
+.aboutMain_img{
+  display: block;
+  width: 100%;
+}
+.aboutMain_image{
+    display: block;
+    width: 100%;
+}
+
+.aboutMain_content{
+    display: block;
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto 0 auto;
+}
+.aboutMain_title{
+    display: block;
+    font-family: var(--danaBlack);
+    font-size: 1.4rem;
+    color: var(--text-300);
+}
+.aboutMain_paraph{
+    display: block;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    color: var(--text-200);
+}
+.aboutMain_showMore{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
