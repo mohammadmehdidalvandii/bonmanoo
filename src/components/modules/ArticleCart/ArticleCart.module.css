@@ -1,0 +1,105 @@
+.articleCart{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.3s linear;
+}
+.articleCart:hover .articleCart_bg{
+    display: block;
+}
+.articleCart:hover .articleCart_show{
+    display: flex;
+}
+.articleCart:hover .articleCart_title{
+    color: var(--primary);
+}
+.articleCart_img_bg_date{
+    display: block;
+    width: 100%;
+    position: relative;
+}
+.articleCart_img{
+    display: block;
+    width: 100%;
+    height: 250px;
+    z-index: 1;
+    border-radius: 0.6rem;
+}
+.articleCart_bg{
+    display: none;
+    width: 100%;
+    height: 250px;
+    background-color: var(--primary);
+    opacity: 0.45;
+    position: absolute;
+    top: 0;
+    z-index: 4;
+    border-radius: 0.6rem;
+    transition: all 0.4s linear;
+}
+.articleCart_date{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    background-color: var(--white);
+    border: 1px solid var(--primary);
+    border-radius: 1rem;
+    padding: 0.3rem 0.3rem;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -1rem;
+left:35% ;
+z-index: 7;
+}
+.articleCart_show{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    color: var(--white);
+    background-color: var(--primary);
+    border-radius: 50%;
+    z-index: 5;
+    position: absolute;
+    bottom: -1rem;
+    left: 3rem;
+    animation: show .4s linear forwards;
+    transition: all 0.3s linear;
+    &:hover{
+        color: var(--secondary);
+    }
+}
+@keyframes show{
+    0%{
+        left: 0;
+        opacity: 0;
+    }
+    50%{
+        left: 1.5rem;
+        opacity: 50%;
+    }
+    100%{
+        left: 3rem;
+    opacity: 100%;
+    }
+}
+
+.articleCart_content{
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+}
+.articleCart_title{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 1.1rem;
+    color: var(--text-100);
+    transition: all 0.3s linear;
+}
+.articleCart_paraph{
+    display: block;
+    margin-top: 0.8rem;
+    color: var(--text-200);
+}
