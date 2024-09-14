@@ -2,6 +2,7 @@ import Navbar from '@/components/modules/Navbar/Navbar'
 import About from '@/components/template/home/About/About'
 import Adviser from '@/components/template/home/Adviser/Adviser'
 import Banner from '@/components/template/home/Banner/Banner'
+import Magazine from '@/components/template/home/Magazine/Magazine'
 import ProdHome from '@/components/template/home/ProdHome/ProdHome'
 import ProdHurka from '@/components/template/home/ProdHurka/ProdHurka'
 import Store from '@/components/template/home/Store/Store'
@@ -19,6 +20,7 @@ function page() {
     <Adviser/>
     <About/>
     <Store/>
+    <Magazine/>
    <br /><br /><br /><br /><br />
    </>
   )

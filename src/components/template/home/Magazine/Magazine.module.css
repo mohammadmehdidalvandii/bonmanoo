@@ -1,0 +1,46 @@
+.magazine{
+    display: block;
+    width: 100%;
+    margin-top: 5rem;
+}
+.magazine_title_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.magazine_title{
+    display: block;
+    font-family: var(--danaBlack);
+    font-size: 1.3rem;
+    color: var(--text-300);
+}
+.magazine_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.magazine_btn{
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background-color: unset;
+    color: var(--text-200);
+    transition: all 0.3s linear;
+    &:hover{
+        color: var(--primary);
+    }
+}
+.magazine_btn_active{
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background-color: unset;
+    color: var(--primary);
+}
+
