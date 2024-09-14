@@ -118,27 +118,39 @@ body{
   gap: 10px;  
 }
 .navButtonNext{
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   outline:none;
   border:none;
   background-color: unset;
   font-size: 1.5rem;
   color: var(--text-200);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
   transition: all 0.3s linear;
   &:hover{
       color: var(--text-100);
+      background-color: var(--secondary);
   }
 }
 .navButtonPrev{
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   outline:none;
   border:none;
   background-color: unset;
   font-size: 1.5rem;
   color: var(--text-200);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
   transition: all 0.3s linear;
   &:hover{
       color: var(--text-100);
+      background-color: var(--secondary);
   }
 }
 
