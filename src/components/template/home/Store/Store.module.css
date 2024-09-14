@@ -1,0 +1,52 @@
+.store{
+    display: block;
+    width: 100%;
+    margin-top: 5rem;
+}
+.store_title_buttons{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.store_title{
+    display: block;
+    font-family: var(--danaBlack);
+    font-size: 1.3rem;
+    color: var(--text-300);
+}
+.store_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    gap: 15px;
+}   
+.store_btn{
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background-color: unset;
+    color: var(--text-200);
+    transition: all 0.3s linear;
+    &:hover{
+        color: var(--primary);
+    }
+}
+.store_btn_active{
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background-color: unset;
+    color: var(--primary);
+}
+.store_showMore{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
