@@ -1,3 +1,4 @@
+import Footer from '@/components/modules/Footer/Footer'
 import Navbar from '@/components/modules/Navbar/Navbar'
 import About from '@/components/template/home/About/About'
 import Adviser from '@/components/template/home/Adviser/Adviser'
@@ -21,7 +22,7 @@ function page() {
     <About/>
     <Store/>
     <Magazine/>
-   <br /><br /><br /><br /><br />
+    <Footer/>
    </>
   )
 }
