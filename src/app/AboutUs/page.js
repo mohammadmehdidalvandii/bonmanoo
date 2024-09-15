@@ -1,3 +1,4 @@
+import Breadcrumb from '@/components/modules/Breadcrumb/Breadcrumb'
 import Footer from '@/components/modules/Footer/Footer'
 import Navbar from '@/components/modules/Navbar/Navbar'
 import About from '@/components/template/about/About/About'
@@ -7,6 +8,7 @@ function page() {
   return (
     <>
         <Navbar/>
+        <Breadcrumb name="درباره ما"/>
         <About/>
         <Footer/>
     </>

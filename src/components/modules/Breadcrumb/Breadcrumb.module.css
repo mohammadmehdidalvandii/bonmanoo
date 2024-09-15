@@ -1,0 +1,26 @@
+.Breadcrumb{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+.breadcrumb_content{
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb_link{
+    display: block;
+    text-decoration: none;
+    color: var(--text-100);
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: all 0.3s linear;
+    &:hover{
+        color: var(--secondary);
+    }
+}
+.breadcrumb_pageName{
+    display: block;
+    margin-right: 0.3rem;
+    color: var(--primary);
+}
