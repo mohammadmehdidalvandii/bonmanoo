@@ -1,0 +1,135 @@
+.history{
+    display: block;
+    width: 100%;
+    margin-top: 12rem;
+}
+.history_title{
+    display: block;
+    width: 100%;
+    font-family: var(--danaBlack);
+    font-size: 1.5rem;
+    color: var(--text-300);
+    margin: 0 auto;
+    text-align: center  ;
+}
+.history_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%  ;
+    max-height: 200px;
+    margin: 5rem 0;
+    background-color: var(--primary);
+    border-radius: 1rem;
+}
+.history_content{
+    width: 99%;
+    max-height:400px;
+    background-color: var(--shadow);
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+.history_img{
+    display: block;
+    width: 100%;
+}
+
+.history_title_banner{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 1.3rem;
+    color: var(--text-100);
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 4rem;
+}
+.history_items{
+    display: block;
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding-right: 1rem;
+}
+.history_item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.history_item_icon{
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+}
+.history_item_text{
+    display: block;
+    margin-right: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-300);
+}
+
+.history_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 1rem;
+    width: 100%;
+}
+.history_btn{
+    display: block;
+    outline: none;
+    border: none;
+    margin: 0.5rem;
+    background-color: unset;
+    font-size: 0.9rem;
+    color: var(--text-200);
+    transform: rotate(-90deg);
+    transition: all 0.3s linear;
+    &:hover{
+        color: var(--primary);
+    transform: rotate(0);
+    }
+}
+.history_btn_active{
+    display: block;
+    outline: none;
+    border: none;
+    margin: 0.5rem;
+    background-color: unset;
+    font-size: 0.9rem;
+    color: var(--primary);
+    transform: rotate(0);
+}
+
+/* <<<< Responsive code>>>> */
+@media only screen and (max-width: 1200px) {
+    .containers{
+        max-width: 960px;
+    }
+    
+    
+}
+@media only screen and (max-width: 992px) {
+    .containers{
+        max-width: 720px;
+    }
+
+    
+}
+@media only screen and (max-width: 768px) {
+    .containers{
+        max-width: 540px;
+    }
+    .history_img{
+        display: none;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .containers{
+        max-width: 100%;
+    }
+}
