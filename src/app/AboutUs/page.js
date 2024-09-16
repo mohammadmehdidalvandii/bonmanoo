@@ -7,6 +7,7 @@ import CoValue from '@/components/template/about/CoValue/CoValue'
 import Future from '@/components/template/about/Future/Future'
 import History from '@/components/template/about/History/History'
 import Responsible from '@/components/template/about/Responsible/Responsible'
+import Team from '@/components/template/about/Team/Team'
 import React from 'react'
 
 
@@ -25,6 +26,7 @@ function page() {
         <CoValue/>
         <Responsible/>
         <Counter/>
+        <Team/>
         <Footer/>
     </>
   )

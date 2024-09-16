@@ -1,0 +1,64 @@
+.team{
+    display: block;
+    width: 100%;
+    margin-top: 5rem;
+    padding: 3rem 0;
+    background-color: var(--shadow);
+}
+.team_title{
+    display: block;
+    text-align: center;
+    font-family: var(--danaBlack);
+    font-size: 1.5rem;
+    color: var(--text-300);
+}
+.teamCart{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.teamCart_img{
+    width: 100%;
+    border-radius: 1rem;
+}
+.teamCart_content{
+    display: block;
+    margin-top: 1rem;
+    background-color: var(--white);
+    padding: 0.6rem;
+    border-radius: 0.7rem;
+}
+.teamCart_logoTitle{
+    display: flex;
+    gap: 8px;
+}
+.teamCart_logoBox{
+    display: flex;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    background-color: var(--primary);
+}
+.teamCart_logo{
+}
+.teamCart_title{
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-100);
+}
+.teamCart_desc{
+    display: block;
+    margin-top: 0.7rem;
+    color: var(--text-200);
+}
+.team_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
