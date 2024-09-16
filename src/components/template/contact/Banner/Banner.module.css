@@ -1,0 +1,10 @@
+.bannerContact{
+    display: block;
+    width: 100%;
+    height: 70dvh;
+    margin-top: 2rem;
+    background-image: url('/assets/images/bannerContact.webp');
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+}
