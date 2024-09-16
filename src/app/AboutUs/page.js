@@ -5,6 +5,7 @@ import About from '@/components/template/about/About/About'
 import CoValue from '@/components/template/about/CoValue/CoValue'
 import Future from '@/components/template/about/Future/Future'
 import History from '@/components/template/about/History/History'
+import Responsible from '@/components/template/about/Responsible/Responsible'
 import React from 'react'
 
 
@@ -21,6 +22,7 @@ function page() {
         <Future/>
         <History/>
         <CoValue/>
+        <Responsible/>
         <Footer/>
     </>
   )
