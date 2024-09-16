@@ -1,0 +1,36 @@
+.coValue{
+    display: block;
+    width: 100%;
+    margin-top: 5rem;
+}
+.coValue_title{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-family: var(--danaBlack);
+    font-size: 1.5rem;
+    color: var(--text-300);
+}
+.coValue_cart{
+    display: block;
+    text-align: center;
+    color: var(--white);
+    padding: 2rem;
+    width: 100%;
+    background-color: var(--primary);
+    border-radius: 0.7rem;
+    cursor: pointer;
+    user-select: none;
+}
+.coValue_cart_img{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+.coValue_cart_title{
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
