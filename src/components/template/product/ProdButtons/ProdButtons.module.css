@@ -1,0 +1,60 @@
+.prodButtons{
+    display: block;
+    width: 100%;
+}
+.prodButtons_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: -2rem;
+}
+
+/* <<< Responsive code >>> */
+@media only screen and (max-width: 1200px) {
+    .containers{
+        max-width: 960px;
+    }
+    
+    
+}
+@media only screen and (max-width: 992px) {
+    .containers{
+        max-width: 720px;
+    }
+    .prodButtons_wrapper{
+        overflow-x: auto;
+        cursor: pointer;
+        padding-bottom: 1rem;
+    }
+   /* Customize scrollbar */
+.prodButtons_wrapper::-webkit-scrollbar {
+    width: 3px; 
+    height: 8px; 
+  }
+  
+  .prodButtons_wrapper::-webkit-scrollbar-thumb {
+    background:var(--primary); 
+    border-radius: 0.5rem;
+  }
+  
+  .prodButtons_wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0.5rem; 
+  }
+    
+}
+@media only screen and (max-width: 768px) {
+    .container{
+        max-width: 540px;
+    }
+    
+}
+@media only screen and (max-width: 576px) {
+    .containers{
+        max-width: 100%;
+    }
+    .prodButtons_wrapper{
+        margin-top: 2rem;
+    }
+}
