@@ -4,6 +4,7 @@ import Navbar from '@/components/modules/Navbar/Navbar'
 import Banner from '@/components/template/contact/Banner/Banner'
 import Contact from '@/components/template/contact/Contact/Contact'
 import ContactInfo from '@/components/template/contact/ContactInfo/ContactInfo'
+import ExCoffee from '@/components/template/contact/ExCoffee/ExCoffee'
 import React from 'react'
 
 function page() {
@@ -14,6 +15,7 @@ function page() {
     <Banner/>
     <Contact/>
     <ContactInfo/>
+    <ExCoffee/>
     <Footer/>
     </>
   )
