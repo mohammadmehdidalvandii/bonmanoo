@@ -1,0 +1,17 @@
+.qanda{
+    display: block;
+    width: 100%;
+    margin-top: 5rem;
+}
+.qanda_link{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.6rem;
+}
+.qanda_img{
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+}

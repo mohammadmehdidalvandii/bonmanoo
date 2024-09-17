@@ -5,6 +5,7 @@ import Banner from '@/components/template/contact/Banner/Banner'
 import Contact from '@/components/template/contact/Contact/Contact'
 import ContactInfo from '@/components/template/contact/ContactInfo/ContactInfo'
 import ExCoffee from '@/components/template/contact/ExCoffee/ExCoffee'
+import QandA from '@/components/template/contact/QandA/QandA'
 import React from 'react'
 
 function page() {
@@ -16,6 +17,7 @@ function page() {
     <Contact/>
     <ContactInfo/>
     <ExCoffee/>
+    <QandA/>
     <Footer/>
     </>
   )
