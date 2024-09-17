@@ -1,0 +1,20 @@
+.pageHeader{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+.pageHeader_content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    padding: 4rem 0;
+    border-radius: 1rem;
+}
+.pageHeader_title{
+    display: block;
+    align-items: center;
+    font-family: var(--danaBlack);
+    font-size: 2rem;
+    color: var(--white);
+}
