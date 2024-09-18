@@ -5,6 +5,10 @@ import Footer from '@/components/modules/Footer/Footer';
 import PageHeader from '@/components/modules/PageHeader/PageHeader';
 import Shop from '@/components/template/product/Shop/Shop';
 
+
+export const metadata = {
+  title:"بن مانو | فروشگاه",
+}
 function page() {
   return (
     <>

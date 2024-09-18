@@ -8,6 +8,9 @@ import ExCoffee from '@/components/template/contact/ExCoffee/ExCoffee'
 import QandA from '@/components/template/contact/QandA/QandA'
 import React from 'react'
 
+export const metadata = {
+  title:"بن مانو | تماس با ما",
+}
 function page() {
   return (
     <>

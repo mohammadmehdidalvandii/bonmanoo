@@ -5,6 +5,10 @@ import PageHeader from '@/components/modules/PageHeader/PageHeader';
 import Shop from '@/components/template/product/Shop/Shop';
 import React from 'react';
 
+export const metadata = {
+  title:"بن مانو | محصولات خانگی ",
+}
+
 function page() {
   return (
     <>
