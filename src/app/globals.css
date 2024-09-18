@@ -162,7 +162,7 @@ body{
 .bg-shadow{
   display: block;
   width: 100%;
-  height: 100dvh;
+  height: 100%;
   top: 0;
   position: absolute;
   background-color: rgba(0,0,0,0.75);
