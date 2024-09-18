@@ -4,6 +4,7 @@ import Navbar from '@/components/modules/Navbar/Navbar';
 import Footer from '@/components/modules/Footer/Footer';
 import PageHeader from '@/components/modules/PageHeader/PageHeader';
 import ProdButtons from '@/components/template/product/ProdButtons/ProdButtons';
+import Shop from '@/components/template/product/Shop/Shop';
 
 function page() {
   return (
@@ -11,7 +12,8 @@ function page() {
     <Navbar/>
     <Breadcrumb name="محصولات بن مانو"/>
     <PageHeader title="محصولات بن مانو"/>
-    <ProdButtons/>
+    {/* <ProdButtons/> */}
+    <Shop/>
     <Footer/>
     </>
   )
