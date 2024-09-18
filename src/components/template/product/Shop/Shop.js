@@ -6,7 +6,8 @@ function Shop() {
   return (
     <section className={style.shop}>
         <div className="containers">
-            <div className="row col-12">
+            <div className="row">
+                <div className="col-12">
                 <div className={style.shop_buttons}>
                     <ProdBtn/>
                     <ProdBtn/>
@@ -18,6 +19,7 @@ function Shop() {
                     <ProdBtn/>
                     <ProdBtn/>
                     <ProdBtn/>
+                </div>
                 </div>
             </div>
         </div>

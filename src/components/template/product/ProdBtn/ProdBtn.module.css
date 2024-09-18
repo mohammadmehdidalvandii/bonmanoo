@@ -20,7 +20,7 @@
     width: 4rem;
     height: 4rem;
     padding: 0.2rem;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--secondary);
     border-radius: 50%;
 }
 .ProdBtn_btn_active .ProdBtn_btn_boxIcon{
@@ -41,7 +41,7 @@
     color: var(--secondary);
 }
 .ProdBtn_btn:hover .ProdBtn_btn_box{
-    border-color: var(--primary);
+    border-color: var(--secondary);
 }
 .ProdBtn_btn:hover .ProdBtn_btn_boxIcon{
     background-color: var(--primary);
