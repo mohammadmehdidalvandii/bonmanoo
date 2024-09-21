@@ -2,6 +2,7 @@ import Breadcrumb from '@/components/modules/Breadcrumb/Breadcrumb'
 import Footer from '@/components/modules/Footer/Footer'
 import Navbar from '@/components/modules/Navbar/Navbar'
 import Gallery from '@/components/template/productSingle/Gallery/Gallery'
+import Info from '@/components/template/productSingle/Info/Info'
 import React from 'react'
 
 function ProductSingle() {
@@ -17,7 +18,7 @@ function ProductSingle() {
                         <Gallery/>
                     </div>
                     <div className="col-lg-6 col-md-12 col-sm-12">
-
+                        <Info/>
                     </div>
                 </div>
             </div>

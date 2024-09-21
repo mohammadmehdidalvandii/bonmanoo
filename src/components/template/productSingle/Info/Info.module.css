@@ -1,0 +1,115 @@
+.info{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+.info_wrapper{
+    display: block;
+    width: 100%;
+}
+.info_subtitle{
+    display: block;
+    width: 100%;
+    color: var(--text-300);
+}
+.info_title_score{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--text-200);
+}
+.info_title{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 1.5rem;
+    color: var(--text-100);
+}
+.info_score{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+.info_score_text{
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-200);
+}
+.info_score_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--secondary);
+}
+.info_category_sku{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--text-200);
+}
+.info_category_wrapper{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.info_category_title{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 1.1rem;
+    color: var(--text-300);
+}
+.info_category_text{
+    display: block;
+    text-decoration: none;
+    color: var(--secondary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: all 0.3s linear;
+    &:hover{
+        color: var(--primary);
+    }
+}
+.info_sku_wrapper{
+}
+.info_sku_title{
+    font-family: var(--danaBold);
+    font-size: 1.1rem;
+    color: var(--text-300);
+}
+.info_sku_text{
+    display: inline;
+    margin-left: 0.3rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-200);
+}
+.info_buttons{
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+.info_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid var(--secondary);
+    border-radius: 50%;
+    color: var(--secondary);
+    background-color: unset;
+    transition: all 0.3s linear;
+    &:hover{
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+}
