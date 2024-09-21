@@ -183,3 +183,13 @@ body{
        background-color: var(--secondary);
   }
 }
+
+.mySwipers .swiper-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mySwipers{
+  display: block;
+  margin-top: 2rem;
+}
