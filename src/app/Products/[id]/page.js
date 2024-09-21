@@ -2,6 +2,7 @@ import Breadcrumb from '@/components/modules/Breadcrumb/Breadcrumb'
 import Footer from '@/components/modules/Footer/Footer'
 import Navbar from '@/components/modules/Navbar/Navbar'
 import Cart from '@/components/template/productSingle/Cart/Cart'
+import Details from '@/components/template/productSingle/Details/Details'
 import Gallery from '@/components/template/productSingle/Gallery/Gallery'
 import Info from '@/components/template/productSingle/Info/Info'
 import ProductInfo from '@/components/template/productSingle/ProductInfo/ProductInfo'
@@ -26,6 +27,7 @@ function ProductSingle() {
                 <div className="row mt-5">
                     <div className="col-12">
                         <ProductInfo/>
+                        <Details/>
                     </div>
                 </div>
             </div>
