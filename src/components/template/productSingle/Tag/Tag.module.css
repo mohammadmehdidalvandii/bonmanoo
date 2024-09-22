@@ -1,0 +1,23 @@
+.tag{
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--text-200);
+}
+.tag_items{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.tag_item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border: 1px dotted var(--text-200);
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+}   

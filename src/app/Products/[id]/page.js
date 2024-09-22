@@ -7,6 +7,7 @@ import Gallery from '@/components/template/productSingle/Gallery/Gallery'
 import Info from '@/components/template/productSingle/Info/Info'
 import ProdQuestion from '@/components/template/productSingle/ProdQuestion/ProdQuestion'
 import ProductInfo from '@/components/template/productSingle/ProductInfo/ProductInfo'
+import Tag from '@/components/template/productSingle/Tag/Tag'
 import React from 'react'
 
 function ProductSingle() {
@@ -30,6 +31,7 @@ function ProductSingle() {
                         <ProductInfo/>
                         <Details/>
                         <ProdQuestion/>
+                        <Tag/>
                     </div>
                 </div>
             </div>
