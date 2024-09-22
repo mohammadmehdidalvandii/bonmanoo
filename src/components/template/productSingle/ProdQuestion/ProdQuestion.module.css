@@ -1,0 +1,18 @@
+.prodQuestion{
+   display: block;
+    width: 100%;
+    margin-top: 3rem;
+    padding: 1rem;
+    background-color: var(--shadow);
+    border-radius: 1rem;
+}
+.prodQuestion_title{
+    display: block;
+    text-align: center ;
+    font-family: var(--danaBlack);
+    font-size: 1.5rem;
+    color: var(--text-300);
+}
+.prodQuestion_wrapper{
+    display: block;
+}
