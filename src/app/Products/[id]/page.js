@@ -6,6 +6,7 @@ import Details from "@/components/template/productSingle/Details/Details";
 import Gallery from "@/components/template/productSingle/Gallery/Gallery";
 import Info from "@/components/template/productSingle/Info/Info";
 import ProdArticles from "@/components/template/productSingle/ProdArticles/ProdArticles";
+import ProdComment from "@/components/template/productSingle/ProdComment/ProdComment";
 import ProdQuestion from "@/components/template/productSingle/ProdQuestion/ProdQuestion";
 import ProductInfo from "@/components/template/productSingle/ProductInfo/ProductInfo";
 import ProductSuggest from "@/components/template/productSingle/ProductSuggest/ProductSuggest";
@@ -46,6 +47,7 @@ function ProductSingle() {
         <div className="col-12">
           <ProductSuggest />
           <ProdArticles/>
+          <ProdComment/>
         </div>
       </div>
       <Footer />
