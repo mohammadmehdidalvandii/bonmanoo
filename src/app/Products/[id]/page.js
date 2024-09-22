@@ -10,6 +10,7 @@ import ProdComment from "@/components/template/productSingle/ProdComment/ProdCom
 import ProdQuestion from "@/components/template/productSingle/ProdQuestion/ProdQuestion";
 import ProductInfo from "@/components/template/productSingle/ProductInfo/ProductInfo";
 import ProductSuggest from "@/components/template/productSingle/ProductSuggest/ProductSuggest";
+import QandA from "@/components/template/productSingle/QandA/QandA";
 import Tag from "@/components/template/productSingle/Tag/Tag";
 import React from "react";
 
@@ -48,6 +49,7 @@ function ProductSingle() {
           <ProductSuggest />
           <ProdArticles/>
           <ProdComment/>
+          <QandA/>
         </div>
       </div>
       <Footer />

@@ -1,0 +1,153 @@
+.qanda{
+    display: block;
+    width: 100%;
+    margin-top: 4rem;
+}
+.qanda_title{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-family: var(--danaBlack);
+    font-size: 1.5rem;
+    color: var(--text-300);
+}
+.qanda_cart{
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 1rem;
+    background-color: #fafafa;
+    border-radius: 0.6rem;
+}
+.qanda_cart_username_dateTime{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.qanda_cart_username{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.qanda_cart_username_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    color: var(--white);
+}
+.qanda_cart_username_text{
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-100);
+}
+.qanda_cart_dataTime{
+display: block;
+}
+.qanda_cart_date{
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+.qanda_cart_time{
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+.qanda_cart_desc{
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-200);
+}
+.qanda_form{
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+}
+.qanda_form_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.qanda_formBox{
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.qanda_formBox_label{
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-300);
+    margin-bottom: 0.4rem;
+}   
+.qanda_formBox_input{
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    outline: none;
+    border: 1px solid var(--text-200);
+    border-radius: 0.4rem;   
+}
+.qanda_formBox_text{
+    display: block;
+    width: 100%;
+    height: 7rem;
+    outline: none;
+    border: 1px solid var(--text-200);
+    border-radius: 0.4rem;  
+}
+.qanda_form_submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--primary);
+    transition: all 0.3s linear;
+    &:hover{
+        background-color: var(--secondary);
+    }
+}
+/* <<<< Responsive code >>>> */
+@media only screen and (max-width: 1200px) {
+    .containers{
+        max-width: 960px;
+    }
+    
+    
+}
+@media only screen and (max-width: 992px) {
+    .containers{
+        max-width: 720px;
+    }
+
+    
+}
+@media only screen and (max-width: 768px) {
+    .container{
+        max-width: 540px;
+    }
+    
+}
+@media only screen and (max-width: 576px) {
+    .containers{
+        max-width: 100%;
+    }
+    .qanda_form_wrapper{
+        flex-direction: column;
+    }
+}
