@@ -1,0 +1,70 @@
+.productAccordion{
+    display: block;
+    max-width: 750px;
+    margin-bottom: 4rem;
+    user-select: none;
+}
+.productAccordion_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.productAccordion_wrapper_active{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.productAccordion_wrapper_active .productAccordion_number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--primary);
+    font-size: 1.1rem;
+    color: var(--white);
+}
+.productAccordion_title_number{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.productAccordion_numberBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--text-300);
+    border-radius: 50%;
+}
+.productAccordion_number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    font-size: 1.1rem;
+    color: var(--white);
+}
+.productAccordion_title{
+    display: block;
+    margin-right: 0.5rem;
+    font-family: var(--danaBold);
+    font-size: 1.2rem;
+    color: var(--text-300);
+}
+.productAccordion_icon{
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.productAccordion_desc{
+    display: block;
+    max-width: 700px;
+    margin-top: 2rem;
+    color: var(--text-200);
+    transition: all 0.4s linear;
+}
