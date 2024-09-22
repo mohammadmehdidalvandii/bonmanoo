@@ -5,6 +5,7 @@ import Cart from "@/components/template/productSingle/Cart/Cart";
 import Details from "@/components/template/productSingle/Details/Details";
 import Gallery from "@/components/template/productSingle/Gallery/Gallery";
 import Info from "@/components/template/productSingle/Info/Info";
+import ProdArticles from "@/components/template/productSingle/ProdArticles/ProdArticles";
 import ProdQuestion from "@/components/template/productSingle/ProdQuestion/ProdQuestion";
 import ProductInfo from "@/components/template/productSingle/ProductInfo/ProductInfo";
 import ProductSuggest from "@/components/template/productSingle/ProductSuggest/ProductSuggest";
@@ -44,6 +45,7 @@ function ProductSingle() {
       <div className="row mt-5">
         <div className="col-12">
           <ProductSuggest />
+          <ProdArticles/>
         </div>
       </div>
       <Footer />
