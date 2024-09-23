@@ -1,0 +1,36 @@
+.articles{
+    display: block;
+    width: 100%;
+}
+.articles_title{
+    display: block;
+    font-size: 1.5rem;
+    color: var(--text-100);
+}
+.articles_categories{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.articles_btn{
+    display: block;
+    outline: none;
+    border: none;
+    background-color: unset;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-200);
+    transition: all 0.3s linear;
+    &:hover{
+        color: var(--primary);
+    }
+}
+.articles_btn_active{
+    display: block;
+    outline: none;
+    border: none;
+    background-color: unset;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary);
+}
