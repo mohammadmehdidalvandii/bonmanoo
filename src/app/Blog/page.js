@@ -3,6 +3,7 @@ import Footer from '@/components/modules/Footer/Footer'
 import Navbar from '@/components/modules/Navbar/Navbar'
 import Articles from '@/components/template/blog/Articles/Articles'
 import BlogHeader from '@/components/template/blog/BlogHeader/BlogHeader'
+import BlogSuggest from '@/components/template/blog/BlogSuggest/BlogSuggest'
 import Category from '@/components/template/blog/Category/Category'
 import Links from '@/components/template/blog/Links/Links'
 import React from 'react'
@@ -24,6 +25,7 @@ function page() {
       </div>
     </div>
     </div>
+    <BlogSuggest/>
     <Footer/>
     </>
   )
