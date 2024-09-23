@@ -1,0 +1,27 @@
+.blogHeader{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+.blogHeader_content{
+    display: block;
+    margin-top: 3rem;
+}
+.blogHeader_title{
+    display: block;
+    font-size: 1.5rem;
+    color: var(--text-300);
+}
+.blogHeader_description{
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-top: 1rem;
+    color: var(--text-200);
+}
+.blogHeader_slider{
+    display: block;
+    width: 100%;
+}
+.blogHeader_img{
+width: 100%;
+}
