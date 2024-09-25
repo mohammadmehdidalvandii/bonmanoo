@@ -1,0 +1,32 @@
+.categories{
+    display: block;
+    width: 100%;
+    margin-top: -1rem;
+}
+.categories_slider_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    max-width: 1000px;
+    height: 2.5rem;
+    margin: 0 auto;
+    border: 1px solid var(--tooltip);
+    border-radius: 0.5rem;
+    background-color: var(--secondary);
+}
+.categories_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:150px;
+    outline: none;
+    border: none;
+    background-color: unset;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-100);
+    transition: all 0.3s linear;
+    &:hover{
+        color: var(--text-300);
+    }
+}
