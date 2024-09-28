@@ -6,6 +6,9 @@ import CategoryMedia from '@/components/template/category/CategoryMedia/Category
 import CategorySide from '@/components/template/category/CategorySide/CategorySide'
 import React from 'react'
 
+export const metadata = {
+  title:"بن مانو | جزئیات مقاله  ",
+}
 function CategoryDetails() {
   return (
     <>

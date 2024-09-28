@@ -4,7 +4,9 @@ import Navbar from '@/components/modules/Navbar/Navbar';
 import PageHeader from '@/components/modules/PageHeader/PageHeader';
 import Categories from '@/components/template/category/Categories/Categories';
 import React from 'react';
-
+export const metadata = {
+  title:"بن مانو | دسته بندی  مقاله  ",
+}
 function page() {
   return (
     <>
