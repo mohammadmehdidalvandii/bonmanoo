@@ -4,6 +4,7 @@ import Navbar from '@/components/modules/Navbar/Navbar'
 import CategoryContent from '@/components/template/category/CategoryContent/CategoryContent'
 import CategoryMedia from '@/components/template/category/CategoryMedia/CategoryMedia'
 import CategorySide from '@/components/template/category/CategorySide/CategorySide'
+import CategorySlider from '@/components/template/category/CategorySlider/CategorySlider'
 import React from 'react'
 
 export const metadata = {
@@ -27,6 +28,7 @@ function CategoryDetails() {
         </div>
       </div>
     </div>
+    <CategorySlider/>
     <Footer/>
     </>
   )

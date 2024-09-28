@@ -1,0 +1,21 @@
+.categorySlider{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+    padding: 2rem 0;
+    background-color: var(--shadow);
+}
+.categorySlider_title{
+    display: block;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: var(--danaBlack);
+    font-size: 1.5rem;
+    color: var(--text-300);
+}
+.categorySlider_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px   ;
+}
