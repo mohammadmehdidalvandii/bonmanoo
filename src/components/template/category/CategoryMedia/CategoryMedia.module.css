@@ -1,0 +1,26 @@
+.categoryMedia{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+.categoryMedia_wrapper{
+    display: block;
+    width: 100%;
+}
+.CategoryMedia_link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid var(--text-200);
+    border-radius: 0.6rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--text-300);
+    transition: all 0.3s linear;
+    &:hover{
+        background-color: var(--secondary);
+        color: var(--white);
+    }
+}

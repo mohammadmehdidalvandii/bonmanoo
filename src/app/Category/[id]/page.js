@@ -2,6 +2,7 @@ import Breadcrumb from '@/components/modules/Breadcrumb/Breadcrumb'
 import Footer from '@/components/modules/Footer/Footer'
 import Navbar from '@/components/modules/Navbar/Navbar'
 import CategoryContent from '@/components/template/category/CategoryContent/CategoryContent'
+import CategoryMedia from '@/components/template/category/CategoryMedia/CategoryMedia'
 import CategorySide from '@/components/template/category/CategorySide/CategorySide'
 import React from 'react'
 
@@ -19,7 +20,7 @@ function CategoryDetails() {
           <CategoryContent/>
         </div>
         <div className="col-lg-1 col-md-12 d-lg-block d-none">
-          this is col
+          <CategoryMedia/>
         </div>
       </div>
     </div>
