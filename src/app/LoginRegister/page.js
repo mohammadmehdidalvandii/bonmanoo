@@ -8,6 +8,12 @@ function page() {
     <>
     <Navbar/>
     <Breadcrumb name="ثبت نام | ورود"/>
+    <div className="containers">
+        <div className="row row-gap-4">
+            <div className="col-lg-6 col-md-6 col-sm-12"></div>
+            <div className="col-lg-6 col-md-6 col-sm-12"></div>
+        </div>
+    </div>
     <Footer/>
     </>
   )
