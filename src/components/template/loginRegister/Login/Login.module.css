@@ -1,0 +1,30 @@
+.login{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+    border: 1px solid var(--primary);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.login_wrapper{
+    display: block;
+    width: 100%;
+}
+.login_content{
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid var(--text-200);
+    padding-bottom: 1rem;
+}
+.login_title{
+    display: block;
+    font-family: var(--danaBlack);
+    font-size: 2rem;
+    color: var(--secondary);
+}
+.login_desc{
+    display: block;
+    font-size: 1.1rem;
+    margin-top: 0.4rem;
+    color: var(--text-300);
+}
