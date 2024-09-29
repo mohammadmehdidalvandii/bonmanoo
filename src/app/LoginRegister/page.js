@@ -3,6 +3,7 @@ import Breadcrumb from '@/components/modules/Breadcrumb/Breadcrumb'
 import Footer from '@/components/modules/Footer/Footer'
 import Navbar from '@/components/modules/Navbar/Navbar'
 import Login from '@/components/template/loginRegister/Login/Login'
+import Register from '@/components/template/loginRegister/Register/Register'
 import React from 'react'
 
 function page() {
@@ -15,7 +16,9 @@ function page() {
             <div className="col-lg-6 col-md-6 col-sm-12">
                 <Login/>
             </div>
-            <div className="col-lg-6 col-md-6 col-sm-12"></div>
+            <div className="col-lg-6 col-md-6 col-sm-12">
+                <Register/>
+            </div>
         </div>
     </div>
     <Footer/>
