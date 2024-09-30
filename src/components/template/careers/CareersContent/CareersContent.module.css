@@ -1,0 +1,45 @@
+.careersContent{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+.careersContent_title{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: var(--danaBold);
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+.careersContent_content{
+    display: block;
+    width: 100%;
+}
+.careersContent_desc{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-300);
+}
+.careersContent_item_title{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 1.5rem;
+    color: var(--text-100);
+}
+.careersContent_items{
+    display: block;
+    margin-top: 2rem;
+    list-style: circle;
+}
+.careersContent_item{
+    margin-bottom: 1.5rem;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-200);
+}
+.careersContent_img{
+    width: 100%;
+    border-radius: 1rem;
+}
