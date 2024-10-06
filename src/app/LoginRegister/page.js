@@ -1,4 +1,3 @@
-"use client"
 import Breadcrumb from '@/components/modules/Breadcrumb/Breadcrumb'
 import Footer from '@/components/modules/Footer/Footer'
 import Navbar from '@/components/modules/Navbar/Navbar'
@@ -6,6 +5,9 @@ import Login from '@/components/template/loginRegister/Login/Login'
 import Register from '@/components/template/loginRegister/Register/Register'
 import React from 'react'
 
+export const metadata = {
+  title:"بن مانو | ثبت نام ورود",
+}
 function page() {
   return (
     <>

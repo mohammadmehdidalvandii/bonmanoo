@@ -5,6 +5,10 @@ import CareersContent from '@/components/template/careers/CareersContent/Careers
 import CareersForm from '@/components/template/careers/CareersForm/CareersForm'
 import React from 'react'
 
+export const metadata = {
+  title:"بن مانو | فرصت شغلی  ",
+}
+
 function page() {
   return (
    <>

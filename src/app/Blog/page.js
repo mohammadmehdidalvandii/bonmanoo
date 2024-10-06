@@ -8,6 +8,10 @@ import Category from '@/components/template/blog/Category/Category'
 import Links from '@/components/template/blog/Links/Links'
 import React from 'react'
 
+
+export const metadata = {
+  title:"بن مانو | مقالات",
+}
 function page() {
   return (
     <>

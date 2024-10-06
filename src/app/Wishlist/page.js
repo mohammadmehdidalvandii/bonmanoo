@@ -4,7 +4,9 @@ import Navbar from '@/components/modules/Navbar/Navbar'
 import PageHeader from '@/components/modules/PageHeader/PageHeader'
 import Favorite from '@/components/template/wishlist/Favorite/Favorite'
 import React from 'react'
-
+export const metadata = {
+  title:"بن مانو |  مورد علاقه",
+}
 function page() {
   return (
     <>
