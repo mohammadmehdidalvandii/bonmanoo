@@ -1,0 +1,85 @@
+.question{
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+}
+.question_wrapper{
+    display: block;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+.question_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-block: 1.5rem;
+    gap: 1rem;
+    background-color: var(--white);
+    border: 1px solid var(--success);
+    border-radius: 0.6rem;
+    margin-top: -4rem;
+}
+.question_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    outline: none;
+    border: none;
+    background-color:unset ;
+    font-family: var(--danaBold);
+    transition: all 0.3s linear;
+    &:hover{
+        color: var(--primary);
+    }
+}
+.question_btn_active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background-color:unset ;
+    font-family: var(--danaBold);
+    color: var(--primary);
+}
+.question_content{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+/* Responsive Code */
+
+@media only screen and (max-width: 1200px) {
+    .containers{
+        max-width: 960px;
+    }
+    
+    
+}
+@media only screen and (max-width: 992px) {
+    .containers{
+        max-width: 720px;
+    }
+    .question_buttons{
+        margin-top: 0;  
+    }
+    
+}
+@media only screen and (max-width: 768px) {
+    .container{
+        max-width: 540px;
+    }
+    .question_buttons{
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .containers{
+        max-width: 100%;
+    }
+}
