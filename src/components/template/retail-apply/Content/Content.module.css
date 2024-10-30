@@ -1,0 +1,109 @@
+.content_rp{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+.content_rp_wrapper{
+    display: block;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+.content_rp_titles{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+.content_rp_title{
+    display: block;
+    font-family: var(--danaBlack);
+    font-size: 2rem;
+    color: var(--primary);
+}
+.content_rp_text{
+    display: block;
+    margin-top: 0.7rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-300);
+}
+.content_rp_form{
+    display: block;
+    margin-top: 3rem;
+    width: 100%;
+    padding: 2rem;
+    border: 1px solid var(--text-200);
+    box-shadow: 0 0 30px 20px var(--shadow);
+}
+.content_form{
+    display: block;
+    margin-bottom: 2rem;
+}
+.content_form_title{
+    display: block;
+    margin-bottom: 2rem;
+    font-family: var(--danaBold);
+    font-size: 1.2rem;
+    color: var(--text-100);
+}
+.content_form_wrapper{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.content_formBox{
+    display: block;
+    width: 100%;
+}
+.content_formBox_label{
+    display: block;
+    margin-bottom: 0.6rem;
+    padding-right: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-300);
+}
+.content_formBox_input{
+    display: block; 
+    width: 100%;
+    height: 3rem;
+    border: 1px solid var(--text-200);
+    border-radius: 0.7rem;
+    outline: none;
+    padding-right: 0.3rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* Responsive coding */
+@media only screen and (max-width: 1200px) {
+    .containers{
+        max-width: 960px;
+    }
+    
+    
+}
+@media only screen and (max-width: 992px) {
+    .containers{
+        max-width: 720px;
+    }
+
+    
+}
+@media only screen and (max-width: 768px) {
+    .container{
+        max-width: 540px;
+    }
+    .content_form_wrapper{
+        display: block;
+        gap: 0;
+    }
+    .content_formBox{
+        margin-bottom: 1.5rem;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .containers{
+        max-width: 100%;
+    }
+}
