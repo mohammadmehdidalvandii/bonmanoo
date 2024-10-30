@@ -5,6 +5,10 @@ import PageHeader from '@/components/modules/PageHeader/PageHeader'
 import Questions from '@/components/template/faq/Questions/Questions'
 import React from 'react'
 
+
+export const metadata = {
+  title:"بن مانو |  سوالات متداول",
+}
 function page() {
   return (
     <>

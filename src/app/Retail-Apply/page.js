@@ -4,6 +4,10 @@ import Navbar from '@/components/modules/Navbar/Navbar';
 import Content from '@/components/template/retail-apply/Content/Content';
 import React from 'react';
 
+
+export const metadata = {
+  title:"بن مانو |  ثبت نمایندگی",
+}
 function page() {
   return (
     <>
