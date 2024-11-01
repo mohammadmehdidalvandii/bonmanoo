@@ -1,0 +1,67 @@
+.payment{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+.payment_addDiscount{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: var(--primary-100);
+    padding: 0.5rem;
+    color: var(--primary);
+}
+.payment_addDiscount_text{
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.payment_addDiscount_btn{
+    display: block;
+    outline: none;
+    border: none;
+    background-color: unset;
+    color: var(--primary);
+    transition: all 0.3s linear;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.payment_addDiscount_box{
+    display: block;
+    margin-top: 1rem;
+    border: 1px dotted var(--text-300);
+    padding: 0.6rem;
+}
+.payment_addDiscount_box_text{
+    display: block;
+    margin-bottom: 0.7rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-200);
+}
+.payment_addDiscount_box_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    height: 3rem;
+    border: 1px solid green;
+}
+.payment_addDiscount_box_input{
+    outline: none;
+    border: none;
+}
+.payment_addDiscount_box_btn{
+    outline: none;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: green;
+    background-color: unset;
+    transition: all 0.3 linear;
+    &:hover{
+        color: var(--primary);
+    }
+}
