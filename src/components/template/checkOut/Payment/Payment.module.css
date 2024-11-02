@@ -65,3 +65,178 @@
         color: var(--primary);
     }
 }
+
+.payment_boxTitle{
+    display: block;
+    width: 100%;
+    background-color: var(--primary-100);
+    padding: 1rem;
+    border-radius: 0.4rem;
+}
+.payment_title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--danaBlack);
+    font-size: 1.2rem;
+    color: var(--text-300);
+}
+.payment_checkBoxes{
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+}
+.payment_checkBoxes_title{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-100);
+}
+.payment_checkBoxes_wrappers{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.payment_checkBoxes_wrapper{
+    display: flex;
+    margin-top: 1rem;
+}
+.payment_checkBoxes_text{
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 650;
+    color: var(--text-200);
+    margin-right: 0.2rem;
+}
+.payment_checkBoxes_input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    accent-color: var(--primary);
+    user-select: none;
+}
+
+.payment_form{
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+}
+.payment_formWrapper{
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1.5rem;
+}
+.payment_formBox{
+    display: block;
+    width: 100%;
+}
+.payment_formBox_text{
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 650;
+    color: var(--text-200);
+    margin-right: 0.2rem;
+    margin-bottom: 0.3rem;
+}
+.payment_formBox_input{
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    outline: none;
+    border: 1px solid var(--text-300);
+    border-radius: 0.6rem;
+    padding-right: 0.3rem;
+    font-weight: 600;
+    color: var(--text-100);
+    user-select: none;
+}
+.payment_formBox_select{
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    outline: none;
+    border: 1px solid var(--text-300);
+    border-radius: 0.6rem;
+    padding-right: 0.3rem;
+    font-weight: 600;
+    color: var(--text-100);
+}
+.payment_formBox_option{
+    padding-right: 0.3rem;
+    font-weight: 600;
+    color: var(--text-100);
+}
+
+.payment_pay{
+    display: block;
+    width: 100%;
+    background-color: var(--tooltip);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+.payment_pay_items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.payment_pay_item{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--text-300);
+}
+.payment_pay_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 2.5rem;
+    background-color: var(--primary);
+    color: var(--white);
+    font-family: var(--danaBold);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 0.7rem;
+    transition: all 0.3s linear;
+    &:hover{
+        background-color: var(--secondary);
+    }
+}
+
+/* responsive code */
+@media only screen and (max-width: 1200px) {
+    .containers{
+        max-width: 960px;
+    }
+    
+    
+}
+@media only screen and (max-width: 992px) {
+    .containers{
+        max-width: 720px;
+    }
+
+    
+}
+@media only screen and (max-width: 768px) {
+    .container{
+        max-width: 540px;
+    }
+    .payment_formWrapper{
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .containers{
+        max-width: 100%;
+    }
+}
