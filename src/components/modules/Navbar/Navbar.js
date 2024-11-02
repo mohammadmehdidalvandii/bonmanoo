@@ -1,7 +1,7 @@
 "use client"
 import React, {useEffect, useState } from 'react';
 import style from './Navbar.module.css';
-import { FaBars, FaHeart, FaSearch, FaTimes, FaUser } from "react-icons/fa";
+import { FaBars, FaHeart, FaSearch, FaShoppingBasket, FaTimes, FaUser } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 
@@ -59,7 +59,8 @@ function Navbar() {
     },[])
 
   return (
-    <section className={fixToTop? style.navbar_fixed : style.navBar}>
+    <>
+   <section className={fixToTop? style.navbar_fixed : style.navBar}>
         <div className="containers">
             <div className={style.navbar_wrapper}>
                 <div className={style.navbar_search_menuMobile}>
@@ -323,6 +324,34 @@ function Navbar() {
             </div>
         </div>
     </section>
+
+    <section className={style.navbar_menuBar}>
+        <div className="containers">
+            <ul className={style.navbar_menuBar_items}>
+                <li className={style.navbar_menuBar_item}>
+                    <Link href="/Wishlist" className={style.navbar_menuBar_link}>
+                        <FaHeart/>
+                    </Link>
+                </li>
+                <li className={style.navbar_menuBar_item}>
+                    <button className={style.navbar_menuBar_link}>
+                                    <FaSearch/>
+                    </button>
+                </li>
+                <li className={style.navbar_menuBar_item}>
+                    <Link href="/LoginRegister" className={style.navbar_menuBar_link}>
+                    <FaUser/>
+                    </Link>
+                </li>
+                <li className={style.navbar_menuBar_item}>
+                    <Link href="/Cart" className={style.navbar_menuBar_link}>
+                        <FaShoppingBasket/>
+                    </Link>
+                </li>
+            </ul>
+        </div>
+    </section>
+    </>
   )
 }
 

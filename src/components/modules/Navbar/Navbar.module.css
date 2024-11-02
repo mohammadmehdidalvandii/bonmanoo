@@ -523,8 +523,39 @@
     background-color: var(--secondary);
 }
 
-
-
+/* Navbar Menubar */
+.navbar_menuBar{
+    display: none;
+    width: 100%;
+    position: fixed; 
+    bottom: 0 ;
+    z-index: 888;
+    background-color: var(--success);
+    color: var(--white);
+}
+.navbar_menuBar_items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.navbar_menuBar_item{
+    display: block;
+}
+.navbar_menuBar_link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background-color: unset;
+    font-size: 1.2rem;
+    color: var(--white);
+    transition: all 0.3s linear;
+    &:hover{
+        color: var(--primary);
+    }
+}
 /* <<<< Responsive Code Css >>>> */
 @media only screen and (max-width: 1285px) {
     .containers{
@@ -568,5 +599,8 @@
     }
     .navbar_search{
         display: none;
+    }
+    .navbar_menuBar{
+        display: block;
     }
 }
