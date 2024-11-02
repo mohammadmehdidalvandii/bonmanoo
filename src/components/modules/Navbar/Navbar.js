@@ -284,7 +284,33 @@ function Navbar() {
                                 </span>
                                 <h4 className={style.navbar_basket_title}>سبد خرید </h4>
                             </div>
-                            <span className={style.navbar_basket_empty}>سبد خرید شما خالی است</span>
+                                <div className={style.navbar_basket_items}>
+                                        <div className={style.navbar_basket_cart}>
+                                            <img src="/assets/images/p1.webp" alt="" className={style.navbar_basket_cartImg} />
+                                            <div className={style.navbar_basket_cartContent}>
+                                                <span className={style.navbar_basket_cartName}>دانه قهوه اسپرسو جیورنو</span>
+                                                <span className={style.navbar_basket_cartPrices}>1 ×
+                                                195,270 تومان</span>
+                                            </div>
+                                            <span className={style.navbar_basket_cart_exit}>
+                                                <FaTimes/>
+                                            </span>
+                                        </div>
+                                        <div className={style.navbar_basket_cart}>
+                                            <img src="/assets/images/p1.webp" alt="" className={style.navbar_basket_cartImg} />
+                                            <div className={style.navbar_basket_cartContent}>
+                                                <span className={style.navbar_basket_cartName}>دانه قهوه اسپرسو جیورنو</span>
+                                                <span className={style.navbar_basket_cartPrices}>1 ×
+                                                195,270 تومان</span>
+                                            </div>
+                                            <span className={style.navbar_basket_cart_exit}>
+                                                <FaTimes/>
+                                            </span>
+                                        </div>
+                                </div>
+                            {/* <span className={style.navbar_basket_empty}>سبد خرید شما خالی است</span> */}
+
+                            <Link href='/Cart' className={`${'showMore'} ${style.navbar_basket_cart_goCart}`}>رفتن به سبد خرید</Link>
                         </div>
                         <Link href="#" className={style.navbar_action_wishlist}>
                             <span className={style.navbar_action_wishlist_icon}>
