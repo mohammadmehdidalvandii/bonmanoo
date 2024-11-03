@@ -1,0 +1,98 @@
+.sidebar{
+    display: block;
+    width: 100%;
+    height: 100dvh;
+    background-color: var(--primary);
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+.sidebar_container{
+    display: block;
+    width: 100%;
+    padding: 1rem;
+}
+.sidebar_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+.sidebar_logo_menu{
+    display: block;
+}
+.sidebar_logoLink{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar_logoImg{
+    display: block;
+    max-width: 180px;
+}
+.sidebar_items{
+    display: block;
+    margin-top: 2rem;
+}
+.sidebar_item{
+    display: block;
+    margin-bottom: 1rem;
+}
+.sidebar_item_link{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s linear;
+    &:hover{
+        background-color: var(--secondary);
+    }
+}
+.sidebar_item_linkActive{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+     background-color: var(--secondary);
+}
+.sidebar_item_icon{
+    margin-left: 0.3rem;
+    font-size: 1.2rem;
+}
+.sidebar_actionLinkBtn{
+    display: block;
+    position: absolute;
+    bottom: -1rem;
+}
+.sidebar_ExitButton{
+    display: flex;
+    align-items: center;
+    outline: none;
+    border: none;
+    background-color: unset;
+    width: 100%;
+    padding: 0.5rem;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    color:red;
+    transition: all 0.3s linear;
+    &:hover{
+        background-color: var(--secondary);
+        color: var(--white);
+    }
+}
+.sidebar_exitButton_icon{
+
+}
+.sidebar_exitButton_text{
+
+}

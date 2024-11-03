@@ -1,3 +1,4 @@
+import Sidebar from '@/components/modules/Sidebar/Sidebar'
 import TopBar from '@/components/modules/TopBar/TopBar'
 import React from 'react'
 
@@ -6,7 +7,7 @@ function UserLayout({Children}) {
     <section className='userLayout'>
     <div className="row">
       <div className="col-lg-2 col-md-12 col-sm-12">
-        this sidebar
+        <Sidebar/>
       </div>
       <div className="col-lg-10 col-md-12 col-sm-12">
         <TopBar/>
