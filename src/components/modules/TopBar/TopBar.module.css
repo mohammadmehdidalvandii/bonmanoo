@@ -1,0 +1,77 @@
+.topBar{
+    display: block;
+    width: 100%;
+    background-color: var(--shadow);
+    margin-top: 1rem;
+}
+.topBar_container{
+    display: block;
+    width: 97%;
+    height: 3rem;
+    margin-right: 1rem;
+}
+.topBar_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 0.4rem;
+}
+.topBar_right{
+  display: block;
+}
+.topBar_account{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.topBar_account_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--primary-100);
+    color: var(--primary);
+    border-radius: 0.2rem;
+}
+.topBar_account_name{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-300);
+}
+.topBar_account_side{
+    display: block;
+    width: 2rem;
+    height: 0.1rem;
+    background-color: var(--primary);
+    transform: rotate(90deg);
+}
+.topBar_account_role{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 0.9rem;
+    color: var(--text-200);
+}
+.topBar_left{
+    display: block;
+}
+.topBar_date{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--shadow);
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+}
+.topBar_date_text{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-100);
+}
