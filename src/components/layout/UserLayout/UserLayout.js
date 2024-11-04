@@ -2,7 +2,7 @@ import Sidebar from '@/components/modules/Sidebar/Sidebar'
 import TopBar from '@/components/modules/TopBar/TopBar'
 import React from 'react'
 
-function UserLayout({Children}) {
+function UserLayout({children}) {
   return (
     <section className='userLayout'>
     <div className="row">
@@ -11,7 +11,7 @@ function UserLayout({Children}) {
       </div>
       <div className="col-lg-10 col-md-12 col-sm-12">
         <TopBar/>
-       {Children}
+       {children}
       </div>
     </div>
     </section>

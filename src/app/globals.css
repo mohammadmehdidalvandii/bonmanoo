@@ -299,3 +299,10 @@ body{
   height: 100vh;
   background-color: var(--shadow);
 }
+.boxPanel{
+  display: block;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
