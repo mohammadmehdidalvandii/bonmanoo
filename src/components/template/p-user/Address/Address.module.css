@@ -1,0 +1,67 @@
+.address{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+.address_link{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    width: 200px;
+    height: 8rem;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 0.6rem;
+    transition: all 0.3s linear;
+    &:hover{
+        background-color: var(--secondary);
+    }
+}
+.address_link_icon{
+    display: block;
+    font-size: 2rem;
+}
+.address_link_text{
+    font-family: var(--danaBold);
+    font-size: 1.1rem;
+    font-weight: 800
+}
+.address_item{
+    display: block;
+    text-align: center;
+    position: relative;
+}
+.address_item_exit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--primary);
+    color: var(--white);
+    position: absolute;
+    right: -1rem;
+    top: -2rem;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    &:hover{
+        background-color: var(--secondary);
+    }
+}
+.address_item_content{
+    display: block;
+    margin-top: 1rem;
+}
+.address_item_title{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 1.1rem;
+}
+.address_item_paraph{
+    display: block;
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--text-300);
+}
