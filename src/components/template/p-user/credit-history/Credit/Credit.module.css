@@ -1,0 +1,22 @@
+.credit{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+.credit_item{
+    display: block;
+    text-align: center;
+}
+.credit_item_title{
+    display: block;
+    font-family: var(--danaBlack);
+    font-size: 1.4rem;
+    color: var(--text-100);
+}
+.credit_item_price{
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+}
