@@ -96,3 +96,79 @@
 .sidebar_exitButton_text{
 
 }
+
+.sidebar_res_exit{
+    display: block;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s linear;
+    &:hover{
+        color: var(--secondary);
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .containers{
+        max-width: 960px;
+    }
+    
+    
+}
+@media only screen and (max-width: 992px) {
+    .containers{
+        max-width: 720px;
+    }
+    .sidebar{
+        display: none;
+    }
+    .sidebar_icon{
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+        margin-right: 2rem;
+        font-size: 2.2rem;
+        color: var(--primary);
+        cursor: pointer;
+        transition: all 0.3s linear;
+        &:hover{
+            color: var(--secondary);
+        }
+    }
+    .sidebar_res{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -1000px;
+        height: 100dvh;
+        background-color: var(--primary);
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        transition: all 0.6s linear;
+      }
+  .sidebar_res_active{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100dvh;
+    background-color: var(--primary);
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    transition: all 0.6s linear;
+  }
+}
+@media only screen and (max-width: 768px) {
+    .container{
+        max-width: 540px;
+    }
+    
+}
+@media only screen and (max-width: 576px) {
+    .containers{
+        max-width: 100%;
+    }
+}

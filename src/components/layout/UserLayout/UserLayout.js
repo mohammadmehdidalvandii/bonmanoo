@@ -1,3 +1,4 @@
+"use client"
 import Sidebar from '@/components/modules/Sidebar/Sidebar'
 import TopBar from '@/components/modules/TopBar/TopBar'
 import React from 'react'
