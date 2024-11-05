@@ -96,7 +96,12 @@
 .sidebar_exitButton_text{
 
 }
-
+.sidebar_res{
+    display: none;
+}
+.sidebar_icon{
+    display: none;
+}
 .sidebar_res_exit{
     display: block;
     position: absolute;
