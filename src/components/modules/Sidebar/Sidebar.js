@@ -52,7 +52,7 @@ function Sidebar() {
                 </Link>
               </li>
               <li className={style.sidebar_item}>
-                <Link href="/P-user" className={style.sidebar_item_link}>
+                <Link href="/P-user/Credit-History" className={style.sidebar_item_link}>
                   <span className={style.sidebar_item_icon}>
                     <IoSettingsOutline />
                   </span>
