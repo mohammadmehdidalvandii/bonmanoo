@@ -51,3 +51,34 @@
     border: none;
     width: 100%;
 }
+
+@media only screen and (max-width: 1200px) {
+    .containers{
+        max-width: 960px;
+    }
+    
+    
+}
+@media only screen and (max-width: 992px) {
+    .containers{
+        max-width: 720px;
+    }
+
+    
+}
+@media only screen and (max-width: 768px) {
+    .container{
+        max-width: 540px;
+    }
+    .editAccount_form{
+        width: 100%;
+    }
+    .editAccount_formBox_input{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .containers{
+        max-width: 100%;
+    }
+}
