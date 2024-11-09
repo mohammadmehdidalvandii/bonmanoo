@@ -1,0 +1,42 @@
+.users{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+.users_table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.users_table th,
+.users_table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: right; 
+}
+
+.users_table th {
+  background-color: var(--primary);
+  color: white; 
+}
+
+.users_table tr:nth-child(even) {
+  background-color: #f2f2f2; 
+}
+
+.users_table tr:hover {
+  background-color: #ddd;
+}
+
+.users_table button {
+  background-color: var(--primary);
+  color: white; 
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.users_table button:hover {
+  background-color: var(--secondary); /* رنگ دکمه در حالت hover */
+}

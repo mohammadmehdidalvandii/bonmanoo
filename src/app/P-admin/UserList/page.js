@@ -1,10 +1,11 @@
 import AdminLayout from '@/components/layout/AdminLayout/AdminLayout'
+import Users from '@/components/template/p-admin/Users/Users'
 import React from 'react'
 
 function page() {
   return (
     <AdminLayout>
-        this is UserList
+       <Users/>
     </AdminLayout>
   )
 }
