@@ -1,0 +1,41 @@
+.ordersList{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+.ordersList_table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.ordersList_table th,
+.ordersList_table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: right; 
+}
+
+.ordersList_table th {
+  background-color: var(--primary);
+  color: white; 
+}
+
+.ordersList_table tr:nth-child(even) {
+  background-color: #f2f2f2; 
+}
+
+.ordersList_table tr:hover {
+  background-color: #ddd;
+}
+
+.ordersList_table button {
+  background-color: var(--primary);
+  color: white; 
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ordersList_table button:hover {
+  background-color: var(--secondary); /* رنگ دکمه در حالت hover */
+}
