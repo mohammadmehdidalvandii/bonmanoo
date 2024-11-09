@@ -119,7 +119,7 @@ import { usePathname } from "next/navigation";
                     </Link>
                   </li>
                   <li className={style.sidebar_item}>
-                    <Link href="/P-user/ListProducts" className={activeLink === '/P-user/ListProducts' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                    <Link href="/P-admin/ListProducts" className={activeLink === '/P-admin/ListProducts' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
                       <span className={style.sidebar_item_icon}>
                         <IoSettingsOutline />
                       </span>
@@ -280,7 +280,7 @@ import { usePathname } from "next/navigation";
                     </Link>
                   </li>
                   <li className={style.sidebar_item}>
-                    <Link href="/P-user/ListProducts" className={activeLink === '/P-user/ListProducts' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                    <Link href="/P-admin/ListProducts" className={activeLink === '/P-admin/ListProducts' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
                       <span className={style.sidebar_item_icon}>
                         <IoSettingsOutline />
                       </span>
