@@ -1,5 +1,6 @@
 .sidebar{
     display: block;
+    position: fixed;
     max-width: clamp(100% , 250px , 230px);
     height: 100dvh;
     background-color: var(--primary);
