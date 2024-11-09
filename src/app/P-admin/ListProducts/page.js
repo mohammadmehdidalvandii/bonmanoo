@@ -1,10 +1,11 @@
 import AdminLayout from '@/components/layout/AdminLayout/AdminLayout'
+import ProductsList from '@/components/template/p-admin/ProductsList/ProductsList'
 import React from 'react'
 
 function page() {
   return (
     <AdminLayout>
-        this is ListProducts
+        <ProductsList/>
     </AdminLayout>
   )
 }
