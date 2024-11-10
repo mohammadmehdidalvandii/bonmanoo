@@ -1,0 +1,42 @@
+.contactList{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+.contactList_table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.contactList_table th,
+.contactList_table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: right; 
+}
+
+.contactList_table th {
+  background-color: var(--primary);
+  color: white; 
+}
+
+.contactList_table tr:nth-child(even) {
+  background-color: #f2f2f2; 
+}
+
+.contactList_table tr:hover {
+  background-color: #ddd;
+}
+
+.contactList_table button {
+  background-color: var(--primary);
+  color: white; 
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.contactList_table button:hover {
+  background-color: var(--secondary); /* رنگ دکمه در حالت hover */
+}
