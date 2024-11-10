@@ -1,11 +1,18 @@
 import React from 'react';
 import style from './ProductsList.module.css'
+import Link from 'next/link';
 
 function ProductsList() {
   return (
     <section className={style.productList}>
         <div className="container">
             <div className="row">
+                <h6 className="admin-title">افزودن محصول</h6>
+                <div className="col-12">
+                    <Link href="/P-admin/AddProduct" className={style.productList_addProduct}>اضافه کردن محصول</Link>
+                </div>
+            </div>
+            <div className="row mt-3">
                 <div className="col-12">
                     <div className="boxPanel">
                     <div className={style.productList_search}>
