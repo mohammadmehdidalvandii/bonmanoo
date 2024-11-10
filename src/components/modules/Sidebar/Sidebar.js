@@ -147,7 +147,7 @@ import { usePathname } from "next/navigation";
                     </Link>
                   </li>
                   <li className={style.sidebar_item}>
-                    <Link href="/P-user/Edit-Account" className={activeLink === '/P-user/Edit-Account' ? style.sidebar_item_linkActive :style.sidebar_item_link}>
+                    <Link href="/P-admin/Edit-Account" className={activeLink === '/P-admin/Edit-Account' ? style.sidebar_item_linkActive :style.sidebar_item_link}>
                       <span className={style.sidebar_item_icon}>
                         <IoSettingsOutline />
                       </span>
@@ -308,7 +308,7 @@ import { usePathname } from "next/navigation";
                     </Link>
                   </li>
                   <li className={style.sidebar_item}>
-                    <Link href="/P-user/Edit-Account" className={activeLink === '/P-user/Edit-Account' ? style.sidebar_item_linkActive :style.sidebar_item_link}>
+                    <Link href="/P-admin/Edit-Account" className={activeLink === '/P-admin/Edit-Account' ? style.sidebar_item_linkActive :style.sidebar_item_link}>
                       <span className={style.sidebar_item_icon}>
                         <IoSettingsOutline />
                       </span>
