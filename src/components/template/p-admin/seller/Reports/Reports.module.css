@@ -1,0 +1,42 @@
+.reports{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+    height: 50vh;
+}
+.reports_table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.reports_table th,
+.reports_table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: right; 
+}
+
+.reports_table th {
+  background-color: var(--primary);
+  color: white; 
+}
+
+.reports_table tr:nth-child(even) {
+  background-color: #f2f2f2; 
+}
+
+.reports_table tr:hover {
+  background-color: #ddd;
+}
+
+.reports_table button {
+  background-color: var(--primary);
+  color: white; 
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reports_table button:hover {
+  background-color: var(--secondary);
+}
