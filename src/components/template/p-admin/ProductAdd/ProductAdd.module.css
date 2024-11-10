@@ -1,0 +1,105 @@
+.productAdd{
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+.productAdd_form{
+    display: block;
+    width: 100%;
+
+}
+.productAdd_wrapper{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 100%;
+    gap: 1rem;
+}
+.productAdd_formBox{
+    display: block;
+    width: 100%;
+    user-select: none;
+    margin-bottom: 1rem;
+}
+.productAdd_formBox_label{
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--text-300);
+    margin-bottom: 0.4rem;
+}
+.productAdd_formBox_input{
+    display: block;
+    width: 100%;
+    height: 3rem;
+    outline: none;
+    border: 1px solid var(--text-200);
+    border-radius: 0.4rem;
+    padding-right: 0.3rem;
+    font-weight: 700;
+    color: var(--text-100);
+    font-size: 0.9rem;
+}
+.productAdd_formBox_select{
+    display: block;
+    width: 100%;
+    height: 3rem;
+    outline: none;
+    border: 1px solid var(--text-200);
+    border-radius: 0.4rem;
+    padding-right: 0.3rem;
+    font-weight: 700;
+    color: var(--text-100);
+    font-size: 0.9rem;
+}
+.productAdd_formBox_text{
+    display: block;
+    width: 100%;
+    height: 8rem;
+    outline: none;
+    border: 1px solid var(--text-200);
+    border-radius: 0.4rem;
+    padding-right: 0.3rem;
+    padding-top: 0.3rem;
+    font-weight: 700;
+    color: var(--text-100);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+.productAdd_formBox_submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+/* Responsive code */
+@media only screen and (max-width: 1200px) {
+    .containers{
+        max-width: 960px;
+    }
+    
+    
+}
+@media only screen and (max-width: 992px) {
+    .containers{
+        max-width: 720px;
+    }
+    .productAdd_wrapper{
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .container{
+        max-width: 540px;
+    }
+    
+}
+@media only screen and (max-width: 576px) {
+    .containers{
+        max-width: 100%;
+    }
+}
