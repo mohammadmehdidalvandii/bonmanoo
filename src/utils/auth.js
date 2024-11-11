@@ -1,8 +1,5 @@
 import { hash , compare } from "bcryptjs";
 import { sign , verify } from "jsonwebtoken";
-import { cookies } from "next/headers";
-import UserModel from "@/models/User";
-import connectToDB from '@/config/db';
 
 // hash password
 const hashPassword = async (password)=>{
