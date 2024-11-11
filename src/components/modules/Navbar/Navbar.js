@@ -263,7 +263,7 @@ function Navbar() {
                     </ul>
                 </div>
                 <div className={style.navbar_action_links}>
-                    <Link href="#" className={style.navbar_action_LoginRegister}>
+                    <Link href="/LoginRegister" className={style.navbar_action_LoginRegister}>
                             <span className={style.navbar_action_LoginRegister_icon}>
                                 <span className={style.navbar_action_LoginRegister_iconBox}>
                                     <FaUser/>
