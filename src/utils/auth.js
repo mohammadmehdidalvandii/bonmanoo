@@ -57,5 +57,6 @@ export{
     verifyAccessToken,
     generateRefreshToken,
     validationEmail,
+    validationPassword,
     validationPhone,
 }
