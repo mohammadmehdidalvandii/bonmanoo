@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./ProductAdd.module.css";
 
-function ProductAdd() {
+function ProductAdd({cateProducts}) {
   return (
     <section className={style.productAdd}>
       <div className="container">
@@ -48,7 +48,9 @@ function ProductAdd() {
                       className={style.productAdd_formBox_select}
                     >
                       <option value="">دسته بندی</option>
-                      <option value=""></option>
+                      {cateProducts.map(cateProduct=>(
+                        <option value={cateProduct.name} key={cateProduct._id}>{cateProduct.name}</option>
+                      ))}
                     </select>
                   </div>
                 </div>

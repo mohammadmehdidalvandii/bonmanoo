@@ -5,8 +5,8 @@ const schema = new mongoose.Schema({
         type: String,
         require:true
     },
-})
+});
 
-const model = mongoose.models.CategoryProducts || mongoose.model("CategoryProduct", schema);
+const model = mongoose.models.CategoryProducts || mongoose.model("CategoryProducts", schema);
 
 module.exports = model;
