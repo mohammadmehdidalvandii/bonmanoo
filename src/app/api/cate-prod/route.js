@@ -18,3 +18,9 @@ export async function POST (req){
     )
 
 }
+
+export async function GET (){
+    connectToDB();
+    const categoryProduct = await CategoryProductsModel.find({});
+    return Response.json(categoryProduct)
+}
