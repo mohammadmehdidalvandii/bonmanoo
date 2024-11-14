@@ -1,7 +1,42 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import style from "./ProductAdd.module.css";
 
-function ProductAdd({cateProducts}) {
+function ProductAdd() {
+  const [categoryProducts , setCategoryProducts] = useState([]);
+  const [productsType , setProductsType] = useState([])
+  const [categoryProductsID , setCategoryProductsID] = useState(-1)
+  const [typeProductID , setTypeProductsID] = useState(-1);
+
+
+  // get CategoryProducts
+
+  useEffect(()=>{
+    const getCategoryProducts = async ()=>{
+      const res = await fetch('/api/cate-prod');
+      const data = await res.json();
+      setCategoryProducts([...data])
+    };
+    getCategoryProducts()
+  },[])
+
+    // Get TypeProducts ID
+    useEffect(()=>{
+      const getTypeProducts = async ()=>{
+        const res = await fetch(`/api/cate-prod/type-products/${categoryProductsID}`);
+        if(res.status === 200){
+          const data = await res.json();
+          console.log(data)
+          // send data 
+          setProductsType([...data.typeProducts])
+
+        }
+      }
+  
+      getTypeProducts()
+    },[categoryProductsID])
+
+
   return (
     <section className={style.productAdd}>
       <div className="container">
@@ -45,11 +80,36 @@ function ProductAdd({cateProducts}) {
                     <select
                       name="#"
                       id="#"
+                      onChange={(e)=>setCategoryProductsID(e.target.value)}
                       className={style.productAdd_formBox_select}
                     >
-                      <option value="">دسته بندی</option>
-                      {cateProducts.map(cateProduct=>(
-                        <option value={cateProduct.name} key={cateProduct._id}>{cateProduct.name}</option>
+                      <option value={-1}>انتخاب کنید</option>
+                      {categoryProducts.map(cateProduct=>(
+                        <option value={cateProduct._id} key={cateProduct._id}>{cateProduct.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+
+                <div className={style.productAdd_wrapper}>
+               
+                  <div className={style.productAdd_formBox}>
+                    <label
+                      htmlFor="#"
+                      className={style.productAdd_formBox_label}
+                    >
+                       زیرمجموع محصول
+                    </label>
+                    <select
+                      name="#"
+                      id="#"
+                      onChange={(e)=>setTypeProductsID(e.target.value)}
+                      className={style.productAdd_formBox_select}
+                    >
+                      <option value={-1}>انتخاب کنید</option>
+                      {productsType.map(product=>(
+                         <option value={product._id} key={product._id}>{product.name}</option>
                       ))}
                     </select>
                   </div>
