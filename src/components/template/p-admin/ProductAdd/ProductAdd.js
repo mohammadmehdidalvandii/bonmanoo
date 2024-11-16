@@ -5,8 +5,11 @@ import style from "./ProductAdd.module.css";
 function ProductAdd() {
   const [categoryProducts , setCategoryProducts] = useState([]);
   const [productsType , setProductsType] = useState([])
+  const [productsSub , setProductsSub] = useState([])
   const [categoryProductsID , setCategoryProductsID] = useState(-1)
   const [typeProductID , setTypeProductsID] = useState(-1);
+  const [subProductsID , setProductsID] = useState(-1)
+
 
 
   // get CategoryProducts
@@ -23,18 +26,31 @@ function ProductAdd() {
     // Get TypeProducts ID
     useEffect(()=>{
       const getTypeProducts = async ()=>{
+        if(categoryProductsID !== -1){
         const res = await fetch(`/api/cate-prod/type-products/${categoryProductsID}`);
         if(res.status === 200){
           const data = await res.json();
-          console.log(data)
-          // send data 
           setProductsType([...data.typeProducts])
-
         }
+      }
       }
   
       getTypeProducts()
     },[categoryProductsID])
+
+    // Get SubProducts ID
+    useEffect(()=>{
+        const getSubProducts = async ()=>{
+          if(typeProductID !== -1){
+          const res = await fetch(`/api/cate-prod/type-products/sub-products/${typeProductID}`);
+          if(res.status === 200){
+              const data = await res.json();
+              setProductsSub([...data.subProducts])
+            }
+          }
+        };
+        getSubProducts();
+    },[typeProductID])
 
 
   return (
@@ -99,7 +115,7 @@ function ProductAdd() {
                       htmlFor="#"
                       className={style.productAdd_formBox_label}
                     >
-                       زیرمجموع محصول
+                       تایپ محصول
                     </label>
                     <select
                       name="#"
@@ -113,6 +129,27 @@ function ProductAdd() {
                       ))}
                     </select>
                   </div>
+                  {productsSub.length > 0 && (
+                  <div className={style.productAdd_formBox}>
+                    <label
+                      htmlFor="#"
+                      className={style.productAdd_formBox_label}
+                    >
+                       زیرمجموعه محصول
+                    </label>
+                    <select
+                      name="#"
+                      id="#"
+                      onChange={(e)=>setProductsID(e.target.value)}
+                      className={style.productAdd_formBox_select}
+                    >
+                      <option value={-1}>انتخاب کنید</option>
+                      {productsSub.map(subProduct=>(
+                         <option value={subProduct._id} key={subProduct._id}>{subProduct.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                  )}
                 </div>
                 <div className={style.productAdd_formBox}>
                   <label htmlFor="#" className={style.productAdd_formBox_label}>
