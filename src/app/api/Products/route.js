@@ -35,7 +35,7 @@ export async function POST (req){
         const dimensionsPack  = formData.get("dimensionsPack");
         const create  = formData.get("create");
         const tags  = formData.get("tags");
-        const img  = formData.get("img[]");
+        const img  = formData.getAll("img[]");
 
 
         // not Exist  File Uploads 
@@ -46,7 +46,7 @@ export async function POST (req){
         const imgUrls = [];
         for (const file of img){
             const bufferImg = Buffer.from(await file.arrayBuffer());
-            const fileName = Data.now() + path.extname(file.name);
+            const fileName = Date.now() + path.extname(file.name);
             const imgPath = path.join(uploadsDir , fileName);
             await writeFile(imgPath ,bufferImg);
             imgUrls.push(`http://localhost:3000/uploads/${fileName}`);
@@ -89,6 +89,7 @@ export async function POST (req){
 
 
     } catch(error){
+        console.log("error=>" ,error)
         return Response.json(
             {message:"Error Products is server " , error},
             {status:500}
