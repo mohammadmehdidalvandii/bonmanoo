@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import style from './Contact.module.css';
 import Link from 'next/link';
 import { FaFacebook, FaInstagram, FaLinkedin, FaPinterest, FaTelegram, FaWhatsapp, FaYoutube } from 'react-icons/fa';
@@ -10,8 +10,70 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { validationEmail ,validationPhone } from '@/utils/auth';
+import { showSwal } from '@/utils/helpers';
+import swal from 'sweetalert';
+
+
+
 function Contact() {
     const swiperRef = useRef(null);
+    const [username , setUserName] = useState("")
+    const [phone , setPhone] = useState("")
+    const [email , setEmail] = useState("")
+    const [subject , setSubject] = useState("-1")
+    const [message , setMessage] = useState("")
+
+    const handlerSendMessage = async (e)=>{
+        e.preventDefault();
+        const  messages = {username, phone , email , subject ,message};
+
+        if(!username.trim()){
+            showSwal("مقدار نام ونام خانوادگی اجباری است","error","تلاش مجدد")
+        }
+        const isValidPhone = validationPhone(phone);
+        if(!isValidPhone){
+            showSwal("مقدار تلفن درست نمیباشد","error","تلاش مجدد")
+        } else if(!phone.trim()){
+            showSwal("مقدار تلفن اجباری است","error","تلاش مجدد")
+        }
+        const isValidEmail = validationEmail(email);
+        if(!isValidEmail){
+            showSwal("مقدار ایمیل صحیح نیست","error","تلاش مجدد")
+        } else if(!email.trim()){
+            showSwal("مقدار ایمیل اجباری است","error","تلاش مجدد")
+        }
+        if(subject === "-1"){
+            showSwal("مقدار موضوع اجباری است","error","تلاش مجدد")
+        }
+        if(!message.trim()){
+            showSwal("مقدار پیام اجباری است","error","تلاش مجدد")
+        };
+
+        const res = await fetch('/api/contact',{
+            method: "POST",
+            headers: {"Content-Type":"application/json"},
+            body:JSON.stringify(messages),
+        });
+
+        if(res.status === 201){
+            swal({
+                title:"پیام شما با موفقیت ارسال شد",
+                icon:"success",
+                buttons:"متوجه شدم"
+            }).then(()=>{
+                location.reload()
+            })
+        }
+
+
+    }
+
+
+
+
+
+
   return (
     <section className={style.contact}>
         <div className="containers">
@@ -158,40 +220,56 @@ function Contact() {
                             <div className={style.contact_form_wrapper}>
                             <div className={style.contact_formBox}>
                                 <label htmlFor="" className={style.contact_formBox_label}>نام و نام خانوادگی *</label>
-                                <input type="text" className={style.contact_formBox_input} />
+                                <input type="text" className={style.contact_formBox_input} 
+                                    value={username}
+                                    onChange={(e)=>setUserName(e.target.value)}
+                                />
                             </div>
                             <div className={style.contact_formBox}>
                                 <label htmlFor="" className={style.contact_formBox_label}>تلفن تماس *</label>
-                                <input type="text" className={style.contact_formBox_input} />
+                                <input type="text" className={style.contact_formBox_input}
+                                value={phone}
+                                onChange={(e)=>setPhone(e.target.value)}
+                                />
                             </div>
                             </div>
                             <div className={style.contact_form_wrapper}>
                              <div className={style.contact_formBox}>
                                  <label htmlFor="" className={style.contact_formBox_label}>ایمیل *</label>
-                                 <input type="text" className={style.contact_formBox_input} />
+                                 <input type="text" className={style.contact_formBox_input} 
+                                 value={email}
+                                 onChange={(e)=>setEmail(e.target.value)}
+                                 />
                              </div>
                              <div className={style.contact_formBox}>
                                  <label htmlFor="" className={style.contact_formBox_label}>موضوع *</label>
-                                 <select className={style.contact_form_select}>
-                                <option value="">موضوع سوال تان را انتخاب کنید</option>
-                                <option value="">پیشنهاد</option>
-                                <option value="">انتقاده یا شکایت</option>
-                                <option value="">پیگیری سفارش</option>
-                                <option value="">پشتیبانی وب سایت</option>
-                                <option value="">واحد بازاریابی</option>
-                                <option value="">واحد فروش</option>
-                                <option value="">واحد منابع انسانی</option>
-                                <option value="">مدیریت</option>
-                                <option value="">سایرموضوعات</option>
+                                 <select className={style.contact_form_select}
+                                    onChange={(e)=>setSubject(e.target.value)}
+                                 >
+                                <option value={"-1"}>موضوع سوال تان را انتخاب کنید</option>
+                                <option value={"پیشنهاد"}>پیشنهاد</option>
+                                <option value={"شکایت یا انتقاد"}>انتقاده یا شکایت</option>
+                                <option value={"سفارش پیگیری"}>پیگیری سفارش</option>
+                                <option value={"پشتیبانی"}>پشتیبانی وب سایت</option>
+                                <option value={"بازاریابی واحد"}>واحد بازاریابی</option>
+                                <option value={"فروش واحد"}>واحد فروش</option>
+                                <option value={"انسانی منابع واحد"}>واحد منابع انسانی</option>
+                                <option value={"مدیریت"}>مدیریت</option>
+                                <option value={"سایر موضوعات"}>سایرموضوعات</option>
                              </select>
                             </div>
                              </div>
                            
                              <div className={style.contact_formBox}>
                                  <label htmlFor="" className={style.contact_formBox_label}>پیام شما *</label>
-                                 <textarea className={style.contact_formBox_text}></textarea>
+                                 <textarea className={style.contact_formBox_text}
+                                 value={message}
+                                 onChange={(e)=>setMessage(e.target.value)}
+                                 ></textarea>
                              </div>
-                             <button className={`${style.contact_form_submit} ${'showMore'}`}>ارسال</button>
+                             <button className={`${style.contact_form_submit} ${'showMore'}`}
+                                onClick={handlerSendMessage}
+                             >ارسال</button>
                         </form>
                     </div>
                 </div>

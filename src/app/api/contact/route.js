@@ -5,7 +5,7 @@ export async function POST (req){
     try{
         connectToDB();
         
-        const body = await req.body();
+        const body = await req.json();
 
         const {
             username,
@@ -28,6 +28,7 @@ export async function POST (req){
             )
 
     } catch(error){
+        console.log("error=>", error)
         return Response.json(
             {message:"Error Server Contact =>" , error},
             {status:500}
