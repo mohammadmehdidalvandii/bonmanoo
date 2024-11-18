@@ -16,8 +16,33 @@ function Navbar() {
     const [isShowBasket , setIsShowBasket] = useState(false);
     const [isShowMenuMobile , setIsShowMenuMobile] = useState(false);
     const [fixToTop ,  setFixToTop] = useState(false);
+    const [categoryProducts , setCategoryProducts] = useState([]);
+    const [categoryProductsID , setCategoryProductsID] = useState(null);
+    const [typeProducts ,  setTypeProducts] = useState([]);
 
 
+    useEffect(()=>{
+        const getCategoryProducts = async ()=>{
+            const res = await fetch("/api/cate-prod");
+            const data = await res.json();
+            setCategoryProducts([...data])
+        };
+        getCategoryProducts()
+    })
+
+    useEffect(()=>{
+        const getTypeProducts = async ()=>{
+            const res = await fetch(`/api/cate-prod/type-products/${categoryProductsID}`);
+            if(res.status === 200){
+                if(categoryProductsID !== null){
+                    const data = await res.json();
+                    console.log("data= >" ,data)
+                    setTypeProducts([...data.typeProducts])
+                }
+            }
+        };
+        getTypeProducts()
+    },[categoryProductsID])
 
     // Handler Show Search Logic
     const handlerShowSearch = ()=>{
@@ -82,15 +107,15 @@ function Navbar() {
                             </div>
                             <ul className={style.navbar_mobile_items}>
                                 <li className={style.mobile_item}>
-                                    <Link href="#" className={style.mobile_link}>
+                                    <Link href="/ProdHome" className={style.mobile_link}>
                                         <span className={style.mobile_link_text}>محصولات خانگی</span>
-                                        <span className={style.mobile_link_icon}><IoIosArrowDown/></span>
+                                       
                                     </Link>
                                 </li>
                                 <li className={style.mobile_item}>
-                                    <Link href="#" className={style.mobile_link}>
+                                    <Link href="/ProdHurka" className={style.mobile_link}>
                                         <span className={style.mobile_link_text}>محصولات هورکا</span>
-                                        <span className={style.mobile_link_icon}><IoIosArrowDown/></span>
+                                    
                                     </Link>
                                 </li>
                                 <li className={style.mobile_item}>
@@ -139,91 +164,35 @@ function Navbar() {
                 <div className={style.navbar_menu_logo}>
                     {/* navbar menu right */}
                     <ul className={style.navbar_menu_items}>
-                        <li className={style.navbar_menu_item}>
-                            <Link href='#' className={`${style.navbar_item_link} ${"tooltip_down"}`}>
-                                <span className={style.navbar_item_link_text}>
-                                    محصولات خانگی
-                                </span>
-                                <span className={style.navbar_item_link_icon}>
-                                    <IoIosArrowDown/>
-                                </span>
-                                {/* <ul className={`${style.navbar_items} ${"tooltip_Down_Menu"}`}>
-                                    <li className={style.navbar_item}>
-                                        <Link href='#' className={style.navbar_item_link_to}>
-                                            <Image src='../../assets/images/home-1.svg' alt='icon link' width={30} height={30}/>
-                                            <span className={style.navbar_item_link_toText}></span>
-                                        </Link>
-                                    </li>
-                                    <li className={style.navbar_item}>
-                                        <Link href='#' className={style.navbar_item_link_to}>
-                                            <Image src='../../assets/images/home-2.svg' alt='icon link' width={30} height={30}/>
-                                            <span className={style.navbar_item_link_toText}></span>
-                                        </Link>
-                                    </li>
-                                    <li className={style.navbar_item}>
-                                        <Link href='#' className={style.navbar_item_link_to}>
-                                            <Image src='../../assets/images/home-3.svg' alt='icon link' width={30} height={30}/>
-                                            <span className={style.navbar_item_link_toText}></span>
-                                        </Link>
-                                    </li>
-                                    <li className={style.navbar_item}>
-                                        <Link href='#' className={style.navbar_item_link_to}>
-                                            <Image src='../../assets/images/home-4.svg' alt='icon link' width={30} height={30}/>
-                                            <span className={style.navbar_item_link_toText}></span>
-                                        </Link>
-                                    </li>
-                                    <li className={style.navbar_item}>
-                                        <Link href='#' className={style.navbar_item_link_to}>
-                                            <Image src='../../assets/images/home-5.svg' alt='icon link' width={30} height={30}/>
-                                            <span className={style.navbar_item_link_toText}></span>
-                                        </Link>
-                                    </li>
-                                    <li className={style.navbar_item}>
-                                        <Link href='#' className={style.navbar_item_link_to}>
-                                            <Image src='../../assets/images/home-6.svg' alt='icon link' width={30} height={30}/>
-                                            <span className={style.navbar_item_link_toText}></span>
-                                        </Link>
-                                    </li>
-                                    <li className={style.navbar_item}>
-                                        <Link href='#' className={style.navbar_item_link_to}>
-                                            <Image src='../../assets/images/home-7.svg' alt='icon link' width={30} height={30}/>
-                                            <span className={style.navbar_item_link_toText}></span>
-                                        </Link>
-                                    </li>
-                                    <li className={style.navbar_item}>
-                                        <Link href='#' className={style.navbar_item_link_to}>
-                                            <Image src='../../assets/images/home-8.svg' alt='icon link' width={30} height={30}/>
-                                            <span className={style.navbar_item_link_toText}></span>
-                                        </Link>
-                                    </li>
-                                    <li className={style.navbar_item}>
-                                        <Link href='#' className={style.navbar_item_link_to}>
-                                            <Image src='../../assets/images/home-9.svg' alt='icon link' width={30} height={30}/>
-                                            <span className={style.navbar_item_link_toText}></span>
-                                        </Link>
-                                    </li>
-                                    <li className={style.navbar_item}>
-                                        <Link href='#' className={style.navbar_item_link_to}>
-                                            <Image src='../../assets/images/home-10.svg' alt='icon link' width={30} height={30}/>
-                                            <span className={style.navbar_item_link_toText}></span>
-                                        </Link>
-                                    </li>
-                                </ul> */}
-                            </Link>
-                        </li>
-                        <li className={style.navbar_menu_item}>
-                            <Link href='#' className={`${style.navbar_item_link} ${"tooltip_down"}`}>
-                                <span className={style.navbar_item_link_text}>
-                                    محصولات هورکا
-                                </span>
-                                <span className={style.navbar_item_link_icon}>
-                                    <IoIosArrowDown/>
-                                </span>
-                                {/* <ul className={`${style.navbar_items} ${"tooltip_Down_Menu"}`}>
-                                  <li className={style.navbar_item}>menu</li>
-                                </ul> */}
-                            </Link>
-                        </li>
+                        {
+                            categoryProducts.map((cateProduct)=>(
+                                <li className={style.navbar_menu_item} key={cateProduct._id} >
+                                <Link href='/ProdHome' className={`${style.navbar_item_link} ${"tooltip_down"}`}
+                                onMouseEnter={()=>setCategoryProductsID(cateProduct._id)}
+                                >
+                                    <span className={style.navbar_item_link_text}>
+                                        {cateProduct.name}
+                                    </span>
+                                    <span className={style.navbar_item_link_icon}>
+                                        <IoIosArrowDown/>
+                                    </span>
+                                    <ul className={`${style.navbar_items} ${"tooltip_Down_Menu"}`}>
+                                        {typeProducts.map((productType)=>(
+                                        <li className={style.navbar_item} key={productType._id}>
+                                            <Link href='#' className={style.navbar_item_link_to}>
+                                                <Image src='../../assets/images/home-1.svg' alt='icon link' width={30} height={30}/>
+                                                <span className={style.navbar_item_link_toText}>
+                                                    {productType.name}
+                                                </span>
+                                            </Link>
+                                        </li>
+                                        ))}
+                                    </ul>
+                                </Link>
+                            </li>
+                            )) 
+                        }
+                      
                     </ul>
                     {/* navbar logos */}
                         <div className={style.navbar_logo}>
@@ -247,14 +216,14 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className={style.navbar_menu_item}>
-                            <Link href='#' className={style.navbar_item_link}>
+                            <Link href='/AboutUs' className={style.navbar_item_link}>
                                 <span className={style.navbar_item_link_text}>
                                     درباره ما
                                 </span>
                             </Link>
                         </li>
                         <li className={style.navbar_menu_item}>
-                            <Link href='#' className={style.navbar_item_link}>
+                            <Link href='/ContactUs' className={style.navbar_item_link}>
                                 <span className={style.navbar_item_link_text}>
                                     تماس با ما
                                 </span>

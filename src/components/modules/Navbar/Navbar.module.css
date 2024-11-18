@@ -151,6 +151,31 @@
     display: flex;
     align-items: center;
 }
+.navbar_items{
+    display: block;
+    width: 100%;
+}
+.navbar_item{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+}
+.navbar_item_link_to{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: var(--text-300);
+    transition: all 0.3s linear;
+    &:hover{
+        color: var(--primary);
+    }
+}
+.navbar_item_link_toText{
+
+}
 /* <<<< Navbar Search >>>> */
 .navbar_search{
     display: block;

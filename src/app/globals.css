@@ -76,6 +76,7 @@ body{
   top: 110%;
   left: 50%;
   margin-left: -100px;
+  z-index: 888;
 }
 .tooltip_down:hover .tooltip_Down_Menu {
   visibility: visible;
