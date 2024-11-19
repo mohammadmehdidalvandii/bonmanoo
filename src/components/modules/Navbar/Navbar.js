@@ -29,7 +29,7 @@ function Navbar({isLogin , userRole}) {
             setCategoryProducts([...data])
         };
         getCategoryProducts()
-    })
+    },[])
 
     useEffect(()=>{
         const getTypeProducts = async ()=>{
@@ -245,7 +245,7 @@ function Navbar({isLogin , userRole}) {
                           </span>
                   </Link>
                     ):(
-                        <Link href={userRole === "ADMIN" ? "/P-admin":"/P-user"} className={style.navbar_action_LoginRegister}>
+                        <Link href='/P-user'className={style.navbar_action_LoginRegister}>
                         <span className={style.navbar_action_LoginRegister_icon}>
                             <span className={style.navbar_action_LoginRegister_iconBox}>
                                 <FaUser/>
@@ -330,7 +330,7 @@ function Navbar({isLogin , userRole}) {
                 </li>
                 ):(
                     <li className={style.navbar_menuBar_item}>
-                    <Link href={userRole === "ADMIN" ? "/P-admin" : "/P-user"} className={style.navbar_menuBar_link}>
+                    <Link href='/P-user'className={style.navbar_menuBar_link}>
                     <FaUser/>
                     </Link>
                 </li>
