@@ -19,7 +19,7 @@ const generateAccessToken = (data)=>{
     return token
 };
 // verify Access Token
-const verifyAccessToken = (data)=>{
+const verifyAccessToken = (token)=>{
     try{
         const tokenPayload = verify(token , process.env.ACCESS_TOKEN);
         return tokenPayload
