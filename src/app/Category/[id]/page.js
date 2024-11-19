@@ -5,15 +5,17 @@ import CategoryContent from '@/components/template/category/CategoryContent/Cate
 import CategoryMedia from '@/components/template/category/CategoryMedia/CategoryMedia'
 import CategorySide from '@/components/template/category/CategorySide/CategorySide'
 import CategorySlider from '@/components/template/category/CategorySlider/CategorySlider'
+import { authUser } from '@/utils/serverHelpers'
 import React from 'react'
 
 export const metadata = {
   title:"بن مانو | جزئیات مقاله  ",
 }
-function CategoryDetails() {
+async function CategoryDetails() {
+  const user =  await authUser()
   return (
     <>
-    <Navbar/>
+    <Navbar isLogin={user? true :false}/>
     <Breadcrumb name="جزئیات مقاله"/>
     <div className="containers">
       <div className="row">

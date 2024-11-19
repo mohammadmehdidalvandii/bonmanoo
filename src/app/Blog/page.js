@@ -6,16 +6,18 @@ import BlogHeader from '@/components/template/blog/BlogHeader/BlogHeader'
 import BlogSuggest from '@/components/template/blog/BlogSuggest/BlogSuggest'
 import Category from '@/components/template/blog/Category/Category'
 import Links from '@/components/template/blog/Links/Links'
+import { authUser } from '@/utils/serverHelpers'
 import React from 'react'
 
 
 export const metadata = {
   title:"بن مانو | مقالات",
 }
-function page() {
+async function page() {
+  const user = await authUser()
   return (
     <>
-    <Navbar/>
+    <Navbar isLogin={user ? true : false}/>
     <Breadcrumb name="مجله بن مانو"/>
     <BlogHeader/>
     <Category/>

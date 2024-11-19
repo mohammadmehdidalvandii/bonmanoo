@@ -9,10 +9,10 @@ import React from 'react'
 export const metadata = {
   title:"بن مانو |  سوالات متداول",
 }
-function page() {
+async function page() {
   return (
     <>
-    <Navbar/>
+    <Navbar isLogin={user? true :false}/>
     <Breadcrumb name=" سوالات متداول"/>
     <PageHeader title="سوالات متداول"/>
     <Questions/>

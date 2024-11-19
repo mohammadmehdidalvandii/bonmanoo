@@ -12,12 +12,14 @@ import ProductInfo from "@/components/template/productSingle/ProductInfo/Product
 import ProductSuggest from "@/components/template/productSingle/ProductSuggest/ProductSuggest";
 import QandA from "@/components/template/productSingle/QandA/QandA";
 import Tag from "@/components/template/productSingle/Tag/Tag";
+import { authUser } from "@/utils/serverHelpers";
 import React from "react";
 
-function ProductSingle() {
+async function ProductSingle() {
+  const user = await authUser()
   return (
     <>
-      <Navbar />
+      <Navbar isLogin={user? true :false}/>
       <Breadcrumb name="جزئیات محصول" />
       <div className="containers">
         <div className="row">

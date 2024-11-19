@@ -11,7 +11,7 @@ import Image from 'next/image';
 
 
 
-function Navbar() {
+function Navbar({isLogin , userRole}) {
     const [isShowSearch , setIsShowSearch] = useState(false);
     const [isShowBasket , setIsShowBasket] = useState(false);
     const [isShowMenuMobile , setIsShowMenuMobile] = useState(false);
@@ -232,13 +232,24 @@ function Navbar() {
                     </ul>
                 </div>
                 <div className={style.navbar_action_links}>
-                    <Link href="/LoginRegister" className={style.navbar_action_LoginRegister}>
-                            <span className={style.navbar_action_LoginRegister_icon}>
-                                <span className={style.navbar_action_LoginRegister_iconBox}>
-                                    <FaUser/>
-                                </span>
+                    {!isLogin ? (
+                          <Link href="/LoginRegister" className={style.navbar_action_LoginRegister}>
+                          <span className={style.navbar_action_LoginRegister_icon}>
+                              <span className={style.navbar_action_LoginRegister_iconBox}>
+                                  <FaUser/>
+                              </span>
+                          </span>
+                  </Link>
+                    ):(
+                        <Link href={userRole === "ADMIN" ? "/P-admin":"/P-user"} className={style.navbar_action_LoginRegister}>
+                        <span className={style.navbar_action_LoginRegister_icon}>
+                            <span className={style.navbar_action_LoginRegister_iconBox}>
+                                <FaUser/>
                             </span>
-                    </Link>
+                        </span>
+                </Link>
+                    )}
+                  
                     <button className={style.navbar_action_btn} onClick={handlerShowBasket}>
                         <sub className={style.navbar_action_num}>0</sub>
                         <span className={style.navbar_action_btn_icon}>
@@ -307,11 +318,19 @@ function Navbar() {
                                     <FaSearch/>
                     </button>
                 </li>
+                {!isLogin ? (
                 <li className={style.navbar_menuBar_item}>
                     <Link href="/LoginRegister" className={style.navbar_menuBar_link}>
                     <FaUser/>
                     </Link>
                 </li>
+                ):(
+                    <li className={style.navbar_menuBar_item}>
+                    <Link href={userRole === "ADMIN" ? "/P-admin" : "/P-user"} className={style.navbar_menuBar_link}>
+                    <FaUser/>
+                    </Link>
+                </li>
+                )}
                 <li className={style.navbar_menuBar_item}>
                     <Link href="/Cart" className={style.navbar_menuBar_link}>
                         <FaShoppingBasket/>

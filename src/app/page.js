@@ -8,12 +8,15 @@ import ProdHome from '@/components/template/home/ProdHome/ProdHome'
 import ProdHurka from '@/components/template/home/ProdHurka/ProdHurka'
 import Store from '@/components/template/home/Store/Store'
 import Video from '@/components/template/home/Video/Video'
+import { authUser } from '@/utils/serverHelpers'
 import React from 'react'
 
-function page() {
+async function page() {
+  const user = await authUser()
+  console.log(user)
   return (
    <>
-   <Navbar/>
+   <Navbar isLogin={user? true :false} />
    <Banner/>
    <ProdHome/>
     <Video/>
