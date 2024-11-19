@@ -207,7 +207,7 @@ function Navbar({isLogin , userRole}) {
                     {/* navbar menu left */}
                     <ul className={style.navbar_menu_items}>
                         <li className={style.navbar_menu_item}>
-                            <Link href='#' className={`${style.navbar_item_link} ${"tooltip_down"}`}>
+                            <Link href='/Blog' className={`${style.navbar_item_link} ${"tooltip_down"}`}>
                                 <span className={style.navbar_item_link_text}>
                                     مجله بن مانو
                                 </span>

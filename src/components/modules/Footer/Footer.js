@@ -95,28 +95,28 @@ function Footer() {
                             <ul className={style.footer_items}>
                                 <h5 className={style.footer_item_title}>خدمات مشتریان</h5>
                                 <li className={style.footer_item}>
-                                    <Link href="#" className={style.footer_item_link}>سوالات متداول</Link>
+                                    <Link href="/Faq" className={style.footer_item_link}>سوالات متداول</Link>
                                 </li>
                                 <li className={style.footer_item}>
-                                    <Link href="#" className={style.footer_item_link}>قوانین و مقررات</Link>
+                                    <Link href="/Terms-Conditions" className={style.footer_item_link}>قوانین و مقررات</Link>
                                 </li>
                                 <li className={style.footer_item}>
-                                    <Link href="#" className={style.footer_item_link}>چگونه در بن مانو سفارش خود را ثبت کنیم ؟</Link>
+                                    <Link href="/Order-guide" className={style.footer_item_link}>چگونه در بن مانو سفارش خود را ثبت کنیم ؟</Link>
                                 </li>
                             </ul>
                             <ul className={style.footer_items}>
                                 <h5 className={style.footer_item_title}>با بن مانو</h5>
                                 <li className={style.footer_item}>
-                                    <Link href="#" className={style.footer_item_link}>درباره ما</Link>
+                                    <Link href="/AboutUs" className={style.footer_item_link}>درباره ما</Link>
                                 </li>
                                 <li className={style.footer_item}>
-                                    <Link href="#" className={style.footer_item_link}>مجله بن مانو</Link>
+                                    <Link href="/Blog" className={style.footer_item_link}>مجله بن مانو</Link>
                                 </li>
                                 <li className={style.footer_item}>
-                                    <Link href="#" className={style.footer_item_link}>فرصت های شغلی</Link>
+                                    <Link href="/Careers" className={style.footer_item_link}>فرصت های شغلی</Link>
                                 </li>
                                 <li className={style.footer_item}>
-                                    <Link href="#" className={style.footer_item_link}>ثبت درخواست نمایندگی خرده فروش</Link>
+                                    <Link href="/Retail-Apply" className={style.footer_item_link}>ثبت درخواست نمایندگی خرده فروش</Link>
                                 </li>
                             </ul>
                             <ul className={style.footer_items}>
