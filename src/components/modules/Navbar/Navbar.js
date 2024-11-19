@@ -19,6 +19,7 @@ function Navbar({isLogin , userRole}) {
     const [categoryProducts , setCategoryProducts] = useState([]);
     const [categoryProductsID , setCategoryProductsID] = useState(null);
     const [typeProducts ,  setTypeProducts] = useState([]);
+    const [search , setSearch] = useState("")
 
 
     useEffect(()=>{
@@ -156,7 +157,10 @@ function Navbar({isLogin , userRole}) {
                             <span className={style.navbar_search_inputIconBox_icon}>
                                 <FaSearch/>
                             </span>
-                            <input type="text" className={style.navbar_search_inputIconBox_input} placeholder='جستجو ...'/>
+                            <input type="text" className={style.navbar_search_inputIconBox_input} placeholder='جستجو ...'
+                            value={search}
+                            onChange={(e)=>setSearch(e.target.value)}
+                            />
                         </div>
                     </div>
                 </div>
