@@ -31,3 +31,9 @@ export async function POST (req){
         )
     }
 }
+
+export async function GET (){
+    connectToDB();
+    const magazines = await MagazinesModel.find({});
+    return Response.json(magazines)
+}
