@@ -53,7 +53,7 @@ function ProductAdd() {
     formData.append("name", name);
     formData.append("category", categoryProductsID);
     formData.append("typeProduct", typeProductID);
-    formData.append("subProduct", subProductsID);
+    formData.append("subProductsID", subProductsID === "-1" ?"تعریف نشد":subProductsID);
     formData.append("description", description);
     formData.append("model", model);
     formData.append("method", method);
