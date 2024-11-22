@@ -3,11 +3,39 @@ import React, { useEffect, useState } from 'react';
 import style from './ProductsList.module.css'
 import Link from 'next/link';
 import { FaTimes } from 'react-icons/fa';
+import swal from 'sweetalert';
 
 
 function ProductsList() {
     const [products ,  setProducts] = useState([]);
     const [selectProduct ,  setSelectProduct] = useState(null);
+
+
+    // Handler Delete Product
+    const handlerRemovedProduct = (ProductID , productName) => {
+        swal({
+            title:`از حذف محصول ${productName} اطمینان دارید ؟`,
+            icons:"warning",
+            buttons:["نه","آره"]
+        }).then( async (result)=>{
+           if(result){
+            const res = await fetch(`/api/products/${ProductID}`,{
+                method: "DELETE",
+                headers:{"Content-Type":"application/json"}
+            });
+            if(res.status === 200){
+                swal({
+                    title:"محصول مورد نظر با موفقیت حذف شد",
+                    icon:"success",
+                    buttons:"متوجه شدم"
+                }).then(()=>{
+                    location.reload()
+                })
+            }
+
+           }
+        })
+    }
 
     // handler Show Exit
     const handlerShowExit = () => {
@@ -72,7 +100,9 @@ function ProductsList() {
                             onClick={()=>handlerShowDetails(product)}
                             >جزئیات</button> 
                             <button className={`${"showMore"} ${style.productList_item_btn}`}>ویرایش</button> 
-                            <button className={`${"showMore"} ${style.productList_item_btn}`}>حذف</button> 
+                            <button className={`${"showMore"} ${style.productList_item_btn}`}
+                                onClick={()=>handlerRemovedProduct(product._id , product.name)}
+                            >حذف</button> 
                         </div>
                     </div>
                     </div>
