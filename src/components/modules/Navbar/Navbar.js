@@ -20,6 +20,17 @@ function Navbar({isLogin , userRole}) {
     const [categoryProductsID , setCategoryProductsID] = useState(null);
     const [typeProducts ,  setTypeProducts] = useState([]);
     const [search , setSearch] = useState("")
+    const [magazines , setMagazines] = useState([]);
+    console.log("magazines" , magazines)
+
+    useEffect(()=>{
+        const getMagazines = async ()=>{
+            const res = await fetch('/api/magazines');
+            const data = await res.json();
+            setMagazines([...data])
+        };
+        getMagazines();
+    },[])
 
 
     useEffect(()=>{
@@ -214,9 +225,13 @@ function Navbar({isLogin , userRole}) {
                                 <span className={style.navbar_item_link_icon}>
                                     <IoIosArrowDown/>
                                 </span>
-                                {/* <ul className={`${style.navbar_items} ${"tooltip_Down_Menu"}`}>
-                                    <li className={style.navbar_item}>menu</li>
-                                </ul> */}
+                                <ul className={`${style.navbar_items} ${"tooltip_Down_Menu"}`}>
+                                    {magazines.map((magazine)=>(
+                                          <li className={style.navbar_item} key={magazine._id}>
+                                          <Link href="#" className={style.navbar_item_link_to}>{magazine.name}</Link>
+                                      </li>
+                                    ))}
+                                </ul>
                             </Link>
                         </li>
                         <li className={style.navbar_menu_item}>
