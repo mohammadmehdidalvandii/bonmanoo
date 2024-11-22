@@ -96,3 +96,9 @@ export async function POST (req){
         );
     }
 }
+
+export async function GET (){
+    connectToDB();
+    const products = await ProductsModel.find({});
+    return Response.json(products);
+}
