@@ -6,7 +6,8 @@ import FilterBox from "../FilterBox/FilterBox";
 import { FaFilter, FaTimes } from "react-icons/fa";
 import ProductCart from "@/components/modules/ProductCart/ProductCart";
 
-function Shop() {
+function Shop({products}) {
+    console.log("pro" , products.map((pro)=> pro.name   ))
     const [showMenuFilter , setShowMenuFilter] = useState(false);
     const [productExist , setProductExist] = useState(false)
     
@@ -100,21 +101,17 @@ function Shop() {
                             </div>
                         </div>
                         <div className="row mt-4 row-gap-4">
-                            <div className="col-lg-3 col-md-6 col-sm-12">
-                                <ProductCart/>
+                            {products.map((product)=>(
+                            <div className="col-lg-3 col-md-6 col-sm-12" key={product._id}>
+                                <ProductCart
+                                id={product._id}
+                                name={product.name}
+                                img={product.img[0]}
+                                imgHover={product.img[1]}
+                                price={product.price}
+                                />
                             </div>
-                            <div className="col-lg-3 col-md-6 col-sm-12">
-                                <ProductCart/>
-                            </div>
-                            <div className="col-lg-3 col-md-6 col-sm-12">
-                                <ProductCart/>
-                            </div>
-                            <div className="col-lg-3 col-md-6 col-sm-12">
-                                <ProductCart/>
-                            </div>
-                            <div className="col-lg-3 col-md-6 col-sm-12">
-                                <ProductCart/>
-                            </div>
+                            ))}
                         </div>
                         <div className="row mt-4">
                             <div className="col-12">
