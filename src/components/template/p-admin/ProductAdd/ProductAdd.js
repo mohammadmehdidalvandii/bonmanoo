@@ -37,6 +37,7 @@ function ProductAdd() {
  const [dimensionsPack , setDimensionPack] = useState("");
  const [create , setCreate] = useState("");
  const [tags ,setTags] = useState("");
+ const [price ,setPrice] = useState("");
  const [img , setImg] = useState("");
 
 
@@ -75,6 +76,7 @@ function ProductAdd() {
     formData.append("dimensionsPack", dimensionsPack);
     formData.append("create", create);
     formData.append("tags", tags.split(","));
+    formData.append("price", price);
     formData.append("img", img);
     img.forEach((file)=>{
       formData.append("img[]" , file)
@@ -522,6 +524,20 @@ function ProductAdd() {
                       type="text"
                       value={tags}
                       onChange={(e)=>setTags(e.target.value)}
+                      className={style.productAdd_formBox_input}
+                    />
+                  </div>
+                <div className={style.productAdd_formBox}>
+                    <label
+                      htmlFor="#"
+                      className={style.productAdd_formBox_label}
+                    >
+                      قیمت محصول
+                    </label>
+                    <input
+                      type="text"
+                      value={price}
+                      onChange={(e)=>setPrice(e.target.value)}
                       className={style.productAdd_formBox_input}
                     />
                   </div>

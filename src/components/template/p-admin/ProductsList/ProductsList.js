@@ -211,6 +211,10 @@ function ProductsList() {
                                         <span className={style.details_item_title}>برچسپ :</span>
                                         <span className={style.details_item_text}>{selectProduct.tags}</span>
                                     </li>
+                                    <li className={style.details_item}>
+                                        <span className={style.details_item_title}>قیمت :</span>
+                                        <span className={style.details_item_text}>{selectProduct.price.toLocaleString("fa-ir")}</span>
+                                    </li>
                                 </ul>
                             </div>
                     </section>

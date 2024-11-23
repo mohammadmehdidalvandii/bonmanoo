@@ -35,6 +35,7 @@ export async function POST (req){
         const dimensionsPack  = formData.get("dimensionsPack");
         const create  = formData.get("create");
         const tags  = formData.get("tags");
+        const price  = formData.get("price");
         const img  = formData.getAll("img[]");
 
 
@@ -79,6 +80,7 @@ export async function POST (req){
             dimensionsPack,
             create,
             tags,
+            price,
             img:imgUrls,
         });
 
