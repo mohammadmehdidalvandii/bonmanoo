@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Details.module.css';
 
-function Details() {
+function Details({product}) {
   return (
     <section className={style.details}>
         <div className="row">
@@ -14,43 +14,43 @@ function Details() {
                 <ul className={style.details_items}>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>نام محصول :</span>
-                        <span className={style.details_item_text}>دانه قهوه </span>
+                        <span className={style.details_item_text}>{product.name}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>گونه :</span>
-                        <span className={style.details_item_text}>بورین</span>
+                        <span className={style.details_item_text}>{product.model}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>روش فرآوری :</span>
-                        <span className={style.details_item_text}>شسته تخمیری</span>
+                        <span className={style.details_item_text}>{product.method}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>منطقه رشد :</span>
-                        <span className={style.details_item_text}>Quindio</span>
+                        <span className={style.details_item_text}>{product.growRegion}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>طعم یاد :</span>
-                        <span className={style.details_item_text}>میوه های   قرمز </span>
+                        <span className={style.details_item_text}>{product.taste}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>شیرینی :</span>
-                        <span className={style.details_item_text}>بالا</span>
+                        <span className={style.details_item_text}>{product.sweet}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>جان مایه بادی :</span>
-                        <span className={style.details_item_text}>متوسط</span>
+                        <span className={style.details_item_text}>{product.liquid}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>اسیدیته :</span>
-                        <span className={style.details_item_text}>متوسط روبه بالا</span>
+                        <span className={style.details_item_text}>{product.acidity}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>دم افزار پیشنهادی :</span>
-                        <span className={style.details_item_text}>ابزار های موج سوم</span>
+                        <span className={style.details_item_text}> های موج سوم</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>نوع بسته بندی</span>
-                        <span className={style.details_item_text}>پاکت 3 لایه</span>
+                        <span className={style.details_item_text}> {product.software} </span>
                     </li>
                 </ul>
             </div>
@@ -58,43 +58,43 @@ function Details() {
                 <ul className={style.details_items}>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>زیرگونه :</span>
-                        <span className={style.details_item_text}>Pink Bourbon</span>
+                        <span className={style.details_item_text}> {product.subModel}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>مواد تشکیل دهنده :</span>
-                        <span className={style.details_item_text}>دانه قهوه</span>
+                        <span className={style.details_item_text}>{product.materials}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>ارتفاع :</span>
-                        <span className={style.details_item_text}>1530-1650 متر</span>
+                        <span className={style.details_item_text}>{product.heigh}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>میزان کافئین :</span>
-                        <span className={style.details_item_text}>کم</span>
+                        <span className={style.details_item_text}>{product.caffeine}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>پس طعم :</span>
-                        <span className={style.details_item_text}>متوسط</span>
+                        <span className={style.details_item_text}>{product.beforeTaste}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>رایحه :</span>
-                        <span className={style.details_item_text}>آجیلی و گلی</span>
+                        <span className={style.details_item_text}>{product.scent}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>درجه برشته کاری :</span>
-                        <span className={style.details_item_text}>مدیوم</span>
+                        <span className={style.details_item_text}>{product.roastCurry}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>میزان تلخی :</span>
-                        <span className={style.details_item_text}>کم</span>
+                        <span className={style.details_item_text}>{product.bitterness}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>ابعاد بسته بندی :</span>
-                        <span className={style.details_item_text}>5*12*8 سانتی متر</span>
+                        <span className={style.details_item_text}>{product.dimensionsPack}</span>
                     </li>
                     <li className={style.details_item}>
                         <span className={style.details_item_title}>ساخت :</span>
-                        <span className={style.details_item_text}>ایران</span>
+                        <span className={style.details_item_text}>{product.create}</span>
                     </li>
                 </ul>
             </div>

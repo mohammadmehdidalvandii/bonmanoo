@@ -12,11 +12,16 @@ import ProductInfo from "@/components/template/productSingle/ProductInfo/Product
 import ProductSuggest from "@/components/template/productSingle/ProductSuggest/ProductSuggest";
 import QandA from "@/components/template/productSingle/QandA/QandA";
 import Tag from "@/components/template/productSingle/Tag/Tag";
+import connectToDB from "@/config/db";
 import { authUser } from "@/utils/serverHelpers";
 import React from "react";
+import ProductModel from '@/models/Products'
 
-async function ProductSingle() {
+async function ProductSingle({params}) {
   const user = await authUser()
+  await connectToDB();
+  const productID = params.id
+  const product = await ProductModel.findOne({_id:productID})
   return (
     <>
       <Navbar isLogin={user? true :false}/>
@@ -26,18 +31,18 @@ async function ProductSingle() {
           <div className="col-lg-9 col-md-8 col-sm-12 col-xs-12">
             <div className="row">
               <div className="col-lg-6 col-md-12 col-sm-12">
-                <Gallery />
+                <Gallery products={product.img}/>
               </div>
               <div className="col-lg-6 col-md-12 col-sm-12">
-                <Info />
+                <Info product={product}/>
               </div>
             </div>
             <div className="row mt-5">
               <div className="col-12">
-                <ProductInfo />
-                <Details />
+                <ProductInfo  product={product}/>
+                <Details product={product} />
                 <ProdQuestion />
-                <Tag />
+                <Tag tags={product}/>
               </div>
             </div>
           </div>

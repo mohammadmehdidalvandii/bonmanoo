@@ -16,7 +16,7 @@ async function page() {
   const user  = await  authUser();
   await connectToDB();
   const products = await ProductsModel.find({})
-
+  
   return (
     <>
     <Navbar isLogin={user? true :false}/>

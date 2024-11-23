@@ -10,7 +10,7 @@ import 'swiper/css/thumbs';
 // import required modules
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
-function Gallery() {
+function Gallery({products}) {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <section className={style.gallery}>
@@ -22,12 +22,11 @@ function Gallery() {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <img src="/assets/images/p1.webp" className={style.gallery_img}/>
+        {products.map((item,index)=>(
+        <SwiperSlide key={index} >
+          <img src={item} className={style.gallery_img}/>
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="/assets/images/p1-1.webp" className={style.gallery_img}/>
-        </SwiperSlide>
+        ))}
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
@@ -38,12 +37,11 @@ function Gallery() {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwipers"
       >
-        <SwiperSlide>
-          <img src="/assets/images/p1.webp" className={style.gallery_img}/>
+ {products.map((item,index)=>(
+        <SwiperSlide key={index}>
+          <img src={item}  className={style.gallery_img}/>
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="/assets/images/p1-1.webp" className={style.gallery_img}/>
-        </SwiperSlide>
+        ))}
       </Swiper>
         </div>
     </section>

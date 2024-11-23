@@ -7,7 +7,6 @@ import { FaFilter, FaTimes } from "react-icons/fa";
 import ProductCart from "@/components/modules/ProductCart/ProductCart";
 
 function Shop({products}) {
-    console.log("pro" , products.map((pro)=> pro.name   ))
     const [showMenuFilter , setShowMenuFilter] = useState(false);
     const [productExist , setProductExist] = useState(false)
     
