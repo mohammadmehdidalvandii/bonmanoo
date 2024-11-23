@@ -4,17 +4,17 @@ import Link from "next/link";
 import React from "react";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 
-function ProductCart() {
+function ProductCart({id, img , imgHover , name ,price}) {
   return (
-    <Link href='#' className={style.productCart}>
+    <Link href={`/Products/${id}`} className={style.productCart}>
       <div className={style.productCart_wrapper_img}>
         <img
-          src="/assets/images/p1.webp"
+          src={img}
           alt="product image"
           className={style.productCart_img}
         />
         <img
-          src="/assets/images/p1-1.webp"
+          src={imgHover}
           alt="product image"
           className={style.productCart_img_hover}
         />
@@ -29,9 +29,9 @@ function ProductCart() {
           />
           <span className={style.productCart_weight_text}>وزن 250 گرم</span>
         </div>
-        <h6 className={style.productCart_name}>دانه قهوه اسپرسو جیورنو</h6>
+        <h6 className={style.productCart_name}>{name}</h6>
         <div className={style.productCart_price_addBasket}>
-          <span className={style.product_price}>195,270 تومان</span>
+          <span className={style.product_price}>{price}تومان</span>
           <button className={style.product_addBasket}>
             <HiOutlineShoppingBag />
           </button>
