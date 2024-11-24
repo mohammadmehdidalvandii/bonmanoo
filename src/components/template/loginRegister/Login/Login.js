@@ -1,11 +1,12 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './Login.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { showSwal } from '@/utils/helpers';
 import { validationEmail, validationPassword } from '@/utils/auth';
 import swal from 'sweetalert';
+
 
 function Login() {
     const router = useRouter();
@@ -44,7 +45,7 @@ function Login() {
                 icon:"success",
                 buttons:"متوجه شدم"
             }).then(()=>{
-                router.replace("/")
+                router.refresh()
             })
         }else if(res.status === 422 || res.status ===401){
             return showSwal("کاربری با این اطلاعات وجود ندارد","error","تلاش مجدد")

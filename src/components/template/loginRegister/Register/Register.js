@@ -51,7 +51,7 @@ function Register() {
                 icon:"success",
                 buttons:"متوجه شدم"
             }).then(()=>{
-                    router.replace('/')
+                    router.refresh()
             })
         } else if(res.status === 422){
             showSwal("کاربری با این اطلاعات وجود ندارد","error","تلاش مجدد")
