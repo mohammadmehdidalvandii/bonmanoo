@@ -54,7 +54,7 @@ import { generateAccessToken,
             {
                 status:200,
                 headers:{
-                    "Set-Cookie":`token=${accessToken};path=/:httpOnly=true`
+                    "Set-Cookie":`token=${accessToken};path=/;httpOnly=true;`
                 },
             }
         )
