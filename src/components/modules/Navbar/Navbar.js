@@ -117,13 +117,13 @@ function Navbar({isLogin , userRole}) {
                             </div>
                             <ul className={style.navbar_mobile_items}>
                                 <li className={style.mobile_item}>
-                                    <Link href="/ProdHome" className={style.mobile_link}>
+                                    <Link href="/Products" className={style.mobile_link}>
                                         <span className={style.mobile_link_text}>محصولات خانگی</span>
                                        
                                     </Link>
                                 </li>
                                 <li className={style.mobile_item}>
-                                    <Link href="/ProdHurka" className={style.mobile_link}>
+                                    <Link href="/Products" className={style.mobile_link}>
                                         <span className={style.mobile_link_text}>محصولات هورکا</span>
                                     
                                     </Link>
@@ -180,7 +180,7 @@ function Navbar({isLogin , userRole}) {
                         {
                             categoryProducts.map((cateProduct)=>(
                                 <li className={style.navbar_menu_item} key={cateProduct._id} >
-                                <Link href='/ProdHome' className={`${style.navbar_item_link} ${"tooltip_down"}`}
+                                <Link href='/ProductsProducts' className={`${style.navbar_item_link} ${"tooltip_down"}`}
                                 onMouseEnter={()=>setCategoryProductsID(cateProduct._id)}
                                 >
                                     <span className={style.navbar_item_link_text}>
