@@ -21,7 +21,6 @@ function Navbar({isLogin , userRole}) {
     const [typeProducts ,  setTypeProducts] = useState([]);
     const [search , setSearch] = useState("")
     const [magazines , setMagazines] = useState([]);
-    console.log("magazines" , magazines)
 
     useEffect(()=>{
         const getMagazines = async ()=>{
@@ -48,7 +47,6 @@ function Navbar({isLogin , userRole}) {
             if(res.status === 200){
                 if(categoryProductsID !== null){
                     const data = await res.json();
-                    console.log("data= >" ,data)
                     setTypeProducts([...data.typeProducts])
                 }
             }
@@ -260,7 +258,7 @@ function Navbar({isLogin , userRole}) {
                           </span>
                   </Link>
                     ):(
-                        <Link href='/P-user'className={style.navbar_action_LoginRegister}>
+                        <Link href={userRole === "ADMIN" ? '/P-admin' :'/P-user'} className={style.navbar_action_LoginRegister}>
                         <span className={style.navbar_action_LoginRegister_icon}>
                             <span className={style.navbar_action_LoginRegister_iconBox}>
                                 <FaUser/>
@@ -345,7 +343,7 @@ function Navbar({isLogin , userRole}) {
                 </li>
                 ):(
                     <li className={style.navbar_menuBar_item}>
-                    <Link href='/P-user'className={style.navbar_menuBar_link}>
+                    <Link href={userRole === "ADMIN" ? '/P-admin' :'/P-user'}className={style.navbar_menuBar_link}>
                     <FaUser/>
                     </Link>
                 </li>

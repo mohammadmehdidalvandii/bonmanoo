@@ -13,10 +13,9 @@ import React from 'react'
 
 async function page() {
   const user = await authUser()
-  console.log(user)
   return (
    <>
-   <Navbar isLogin={user? true :false} />
+   <Navbar isLogin={user? true :false} userRole={user} />
    <Banner/>
    <ProdHome/>
     <Video/>
