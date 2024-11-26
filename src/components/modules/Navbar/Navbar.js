@@ -180,7 +180,7 @@ function Navbar({isLogin , userRole}) {
                         {
                             categoryProducts.map((cateProduct)=>(
                                 <li className={style.navbar_menu_item} key={cateProduct._id} >
-                                <Link href='/ProductsProducts' className={`${style.navbar_item_link} ${"tooltip_down"}`}
+                                <Link href='/Products' className={`${style.navbar_item_link} ${"tooltip_down"}`}
                                 onMouseEnter={()=>setCategoryProductsID(cateProduct._id)}
                                 >
                                     <span className={style.navbar_item_link_text}>

@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Shop.module.css";
 import ProdBtn from "../ProdBtn/ProdBtn";
 import FilterBox from "../FilterBox/FilterBox";
@@ -7,9 +7,29 @@ import { FaFilter, FaTimes } from "react-icons/fa";
 import ProductCart from "@/components/modules/ProductCart/ProductCart";
 
 function Shop({products}) {
+    console.log(products)
     const [showMenuFilter , setShowMenuFilter] = useState(false);
-    const [productExist , setProductExist] = useState(false)
-    
+    const [productExist , setProductExist] = useState(false);
+    const [changeProduct , serChangeProduct] = useState("products")
+    const [categoryProducts ,setCategoryProducts] = useState([])
+    const [categoryID , setCategoryID] = useState("")
+
+    useEffect(()=>{
+        const getCategoryProducts = async ()=>{
+            const res = await fetch("/api/cate-prod");
+            const data = await res.json()
+            setCategoryProducts([...data])
+        }
+     getCategoryProducts()
+    },[])
+
+
+    // Handler Change Products
+    const handlerChangeProduct = (productID)=>{
+        serChangeProduct(productID)
+        setCategoryID(productID)
+    }
+
     // Handler ShowMenu Filter
     const handlerShowMenu = ()=>{
         setShowMenuFilter(true)
@@ -29,16 +49,17 @@ function Shop({products}) {
         <div className="row">
           <div className="col-12">
             <div className={style.shop_buttons}>
-              <ProdBtn />
-              <ProdBtn />
-              <ProdBtn />
-              <ProdBtn />
-              <ProdBtn />
-              <ProdBtn />
-              <ProdBtn />
-              <ProdBtn />
-              <ProdBtn />
-              <ProdBtn />
+              <ProdBtn 
+                name="بن مانو"
+                handlerChangeProduct={()=>handlerChangeProduct("products")}
+              />
+              {categoryProducts.map((cate)=>(
+                  <ProdBtn 
+                  key={cate._id}
+                    name={cate.name}
+                    handlerChangeProduct={()=>handlerChangeProduct(cate._id)}
+                  />
+              ))}
             </div>
           </div>
         </div>
@@ -100,18 +121,35 @@ function Shop({products}) {
                             </div>
                         </div>
                         <div className="row mt-4 row-gap-4">
-                            {products.map((product)=>(
-                            <div className="col-lg-3 col-md-6 col-sm-12" key={product._id}>
-                                <ProductCart
-                                id={product._id}
-                                name={product.name}
-                                img={product.img[0]}
-                                imgHover={product.img[1]}
-                                price={product.price}
-                                />
-                            </div>
-                            ))}
-                        </div>
+    {changeProduct === "products" ? (
+        products.map((product) => (
+            <div className="col-lg-3 col-md-6 col-sm-12" key={product._id}>
+                <ProductCart
+                    id={product._id}
+                    name={product.name}
+                    img={product.img[0]}
+                    imgHover={product.img[1]}
+                    price={product.price}
+                />
+            </div>
+        ))
+    ) : (
+        products
+            .filter(product => product.category === categoryID)
+            .map((product) => (
+                <div className="col-lg-3 col-md-6 col-sm-12" key={product._id}>
+                    <ProductCart
+                        id={product._id}
+                        name={product.name}
+                        img={product.img[0]}
+                        imgHover={product.img[1]}
+                        price={product.price}
+                    />
+                </div>
+            ))
+    )}
+</div>
+                       
                         <div className="row mt-4">
                             <div className="col-12">
                                 <div className={style.shop_products_pagination}>
