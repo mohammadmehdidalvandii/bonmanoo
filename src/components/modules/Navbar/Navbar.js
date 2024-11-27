@@ -24,6 +24,33 @@ function Navbar({isLogin , userRole}) {
     const [magazines , setMagazines] = useState([]);
     const [products , setProducts] = useState([]);
     const [searchProduct , setSearchProduct] = useState([]);
+    const [cart ,  setCart] = useState([])
+
+    useEffect(()=>{
+        const basket =  JSON.parse(localStorage.getItem("cart")) || [];
+        setCart(basket)
+    },[])
+
+    const handlerRemovedProduct = (productID)=>{
+        swal({
+            title:"آیا از حذف محصول خود اطمینان دارید ؟",
+            icon:"error",
+            buttons:["نه","آره"]
+        }).then((result)=>{
+            if(result){
+                const newBasket = cart.filter((item)=> item.id !== productID);
+                localStorage.setItem("cart" , JSON.stringify(newBasket))
+                swal({
+                    title:"محصول مورد نظر شما حذف شد ",
+                    icon:"success",
+                    buttons:"متوجه شدم"
+                }).then(()=>{
+                    location.reload()
+                })
+            }
+        })
+    }
+
 
 
     const handlerSearching = (e)=>{
@@ -304,7 +331,7 @@ function Navbar({isLogin , userRole}) {
                     )}
                   
                     <button className={style.navbar_action_btn} onClick={handlerShowBasket}>
-                        <sub className={style.navbar_action_num}>0</sub>
+                        <sub className={style.navbar_action_num}>{cart.length}</sub>
                         <span className={style.navbar_action_btn_icon}>
                             <span className={style.navbar_action_btn_iconBox}>
                                 <HiOutlineShoppingBag/>
@@ -319,30 +346,31 @@ function Navbar({isLogin , userRole}) {
                                 <h4 className={style.navbar_basket_title}>سبد خرید </h4>
                             </div>
                                 <div className={style.navbar_basket_items}>
-                                        <div className={style.navbar_basket_cart}>
-                                            <img src="/assets/images/p1.webp" alt="" className={style.navbar_basket_cartImg} />
-                                            <div className={style.navbar_basket_cartContent}>
-                                                <span className={style.navbar_basket_cartName}>دانه قهوه اسپرسو جیورنو</span>
-                                                <span className={style.navbar_basket_cartPrices}>1 ×
-                                                195,270 تومان</span>
-                                            </div>
-                                            <span className={style.navbar_basket_cart_exit}>
-                                                <FaTimes/>
-                                            </span>
+                                    {cart.length > 0 ? (
+                                        cart.map(item=>(
+                                        <div className={style.navbar_basket_cart} key={item.id}>
+                                        <img src={item.img} alt="" className={style.navbar_basket_cartImg} />
+                                        <div className={style.navbar_basket_cartContent}>
+                                            <span className={style.navbar_basket_cartName}>{item.name}</span>
+                                            <span className={style.navbar_basket_cartPrices}>
+                                            {item.count}
+                                            *
+                                            {item.price}
+                                            =
+                                            {(item.count * item.price).toLocaleString()} 
+                                            تومان</span>
                                         </div>
-                                        <div className={style.navbar_basket_cart}>
-                                            <img src="/assets/images/p1.webp" alt="" className={style.navbar_basket_cartImg} />
-                                            <div className={style.navbar_basket_cartContent}>
-                                                <span className={style.navbar_basket_cartName}>دانه قهوه اسپرسو جیورنو</span>
-                                                <span className={style.navbar_basket_cartPrices}>1 ×
-                                                195,270 تومان</span>
-                                            </div>
-                                            <span className={style.navbar_basket_cart_exit}>
-                                                <FaTimes/>
-                                            </span>
-                                        </div>
+                                        <span className={style.navbar_basket_cart_exit}
+                                            onClick={()=>handlerRemovedProduct(item.id)}
+                                        >
+                                            <FaTimes/>
+                                        </span>
+                                    </div>
+                                        ))
+                                    ) :(
+                                        <span className={style.navbar_basket_empty}>سبد خرید شما خالی است</span>
+                                    )}
                                 </div>
-                            {/* <span className={style.navbar_basket_empty}>سبد خرید شما خالی است</span> */}
 
                             <Link href='/Cart' className={`${'showMore'} ${style.navbar_basket_cart_goCart}`}>رفتن به سبد خرید</Link>
                         </div>
