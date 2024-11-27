@@ -43,7 +43,7 @@ function Cart({products}) {
     <section className={style.cart}>
         <div className={style.cart_wrapper}>
             <div className={style.cart_addBasket}>
-                <h5 className={style.cart_price}> 275,657 تومان</h5>
+                <h5 className={style.cart_price}> {(products.price * count).toLocaleString()} تومان</h5>
                 <div className={style.cart_counter}>
                     <button className={style.cart_counter_btn}
                     onClick={()=>setCount(count + 1)}
