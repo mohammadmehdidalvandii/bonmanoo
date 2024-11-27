@@ -8,6 +8,7 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 
 import Link from 'next/link';
 import Image from 'next/image';
+import ProductCart from '../ProductCart/ProductCart';
 
 
 
@@ -21,6 +22,24 @@ function Navbar({isLogin , userRole}) {
     const [typeProducts ,  setTypeProducts] = useState([]);
     const [search , setSearch] = useState("")
     const [magazines , setMagazines] = useState([]);
+    const [products , setProducts] = useState([]);
+    const [searchProduct , setSearchProduct] = useState([]);
+
+
+    const handlerSearching = (e)=>{
+        e.preventDefault();
+        const searchValue = products.filter((product)=> product.name.includes(search));
+        setSearchProduct(searchValue);
+    }
+
+    useEffect(()=>{
+        const getAlProducts = async () => {
+            const res = await fetch('/api/products');
+            const data = await res.json();
+            setProducts([...data])
+        };
+        getAlProducts();
+    },[])
 
     useEffect(()=>{
         const getMagazines = async ()=>{
@@ -163,13 +182,30 @@ function Navbar({isLogin , userRole}) {
                             <FaTimes/>
                         </span>
                         <div className={style.navbar_search_inputIconBox}>
-                            <span className={style.navbar_search_inputIconBox_icon}>
+                            <span className={style.navbar_search_inputIconBox_icon}
+                            onClick={handlerSearching}
+                            >
                                 <FaSearch/>
                             </span>
                             <input type="text" className={style.navbar_search_inputIconBox_input} placeholder='جستجو ...'
                             value={search}
                             onChange={(e)=>setSearch(e.target.value)}
                             />
+                        </div>
+                        <div className="row mt-4">
+                            <div className="p-4">
+                            {searchProduct.map((product)=>(
+                            <div className="col-lg-3 col-md-6 col-sm-12" key={product._id}>
+                                <ProductCart
+                                     id={product._id}
+                                     name={product.name}
+                                     img={product.img[0]}
+                                     imgHover={product.img[1]}
+                                     price={product.price}
+                                />
+                            </div>
+                            ))}
+                            </div>
                         </div>
                     </div>
                 </div>
