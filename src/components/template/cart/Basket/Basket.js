@@ -132,7 +132,7 @@ function Basket() {
                         </ul>
                         <span className={style.basket_total_error}>(شامل 5 % تومان مالیات بر ارزش افزوده)
                         </span>
-                        <Link href="#" className={style.basket_total_next}>ادامه جهت تسویه</Link>
+                        <Link href={`/CheckOut?totalPrice=${totalPrice}`} className={style.basket_total_next}>ادامه جهت تسویه</Link>
                     </div>
                     )}
                 </div>

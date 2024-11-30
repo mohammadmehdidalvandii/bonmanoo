@@ -1,16 +1,23 @@
 "use client";
 import React, { useState } from "react";
 import style from "./Payment.module.css";
+import { useSearchParams } from "next/navigation";
+
 
 export const metadata = {
   title: "  بن مانو |  پرداخت",
 };
 
 function Payment() {
+  const searchParams = useSearchParams();
   const [showDiscount, setShowDiscount] = useState(false);
   const [isGenuine , setIsGenuine] = useState (true)
   const [isLegal , setIsLegal] = useState (false)
 
+  const totalPriceParam = searchParams.get("totalPrice");
+  
+  const totalPrice = totalPriceParam ? parseInt(totalPriceParam, 10) : 0; 
+  const allPay = totalPrice + 65000;
   const handlerChangeCheckBox = (e)=>{
     if(isGenuine === true){
         setIsLegal(true);
@@ -238,7 +245,7 @@ function Payment() {
                 <div className={style.payment_pay}>
                     <ul className={style.payment_pay_items}>
                         <li className={style.payment_pay_item}>مبلغ کل خرید</li>
-                        <li className={style.payment_pay_item}>195,270 تومان</li>
+                        <li className={style.payment_pay_item}>{totalPrice} تومان</li>
                     </ul>
                     <ul className={style.payment_pay_items}>
                         <li className={style.payment_pay_item}>حمل و نقل</li>
@@ -246,7 +253,7 @@ function Payment() {
                     </ul>
                     <ul className={style.payment_pay_items}>
                         <li className={style.payment_pay_item}>قابل پرداخت</li>
-                        <li className={style.payment_pay_item}>243,000 تومان</li>
+                        <li className={style.payment_pay_item}>{allPay} تومان</li>
                     </ul>
                 </div>
                 <button className={style.payment_pay_btn}>ثبت سفارش و پرداخت</button>
