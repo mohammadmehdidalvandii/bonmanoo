@@ -4,7 +4,7 @@ import style from './Navbar.module.css';
 import { FaBars, FaHeart, FaSearch, FaShoppingBasket, FaTimes, FaUser } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
-
+import swal from 'sweetalert';
 
 import Link from 'next/link';
 import Image from 'next/image';
