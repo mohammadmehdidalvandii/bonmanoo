@@ -321,7 +321,7 @@ function Navbar({isLogin , userRole}) {
                           </span>
                   </Link>
                     ):(
-                        <Link href={userRole === "ADMIN" ? '/P-admin' :'/P-user'} className={style.navbar_action_LoginRegister}>
+                        <Link href={userRole?.role === "ADMIN" ? '/P-admin' :'/P-user'} className={style.navbar_action_LoginRegister}>
                         <span className={style.navbar_action_LoginRegister_icon}>
                             <span className={style.navbar_action_LoginRegister_iconBox}>
                                 <FaUser/>

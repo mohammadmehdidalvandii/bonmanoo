@@ -45,7 +45,7 @@ function Login() {
                 icon:"success",
                 buttons:"متوجه شدم"
             }).then(()=>{
-                router.refresh()
+                router.replace("/")
             })
         }else if(res.status === 422 || res.status ===401){
             return showSwal("کاربری با این اطلاعات وجود ندارد","error","تلاش مجدد")
