@@ -1,9 +1,27 @@
-"use client"
 import Sidebar from '@/components/modules/Sidebar/Sidebar'
 import TopBar from '@/components/modules/TopBar/TopBar'
+import { authUser } from '@/utils/serverHelpers'
+import { redirect } from 'next/navigation';
 import React from 'react'
+import { cookies } from 'next/headers';
 
-function AdminLayout({children}) {
+
+async function AdminLayout({children}) {
+
+  const user = await authUser();
+
+  const token = cookies().get("token");
+  if(!token){
+    return redirect("/LoginRegister")
+  }
+
+  if(user){
+    if(user.role !== "ADMIN"){
+      return redirect("/LoginRegister")
+    }
+  } 
+
+
   return (
     <>
      <section className='adminLayout'>
