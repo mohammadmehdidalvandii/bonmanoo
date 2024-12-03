@@ -6,6 +6,7 @@
   import { FaBars, FaChartPie, FaShoppingBasket, FaTimes, FaUsers } from "react-icons/fa";
   import { IoLocationOutline, IoSettingsOutline ,IoHomeOutline, IoExitOutline  } from "react-icons/io5";
 import { usePathname } from "next/navigation";
+import swal from "sweetalert";
 
   function Sidebar() {
     const pathName = usePathname();
@@ -25,6 +26,29 @@ import { usePathname } from "next/navigation";
     }
     const handlerExitSidebar = ()=>{
       setSidebarMenu(false)
+    }
+
+    const handlerExitPanel =  ()=>{
+      swal({
+        title:"آیا از خروج اطمینان دارید ؟",
+        icon:"error",
+        buttons:["نه","آره"]
+      }).then(async(result)=>{
+        if(result){
+          const res = await fetch('/api/auth/signout',{
+            method:"POST"
+          });
+          if(res.status === 200 ){
+            swal({
+              title: "با موفقیت از اکانت خارج شدین",
+              icon: "success",
+              buttons: "فهمیدم",
+            }).then(() => {
+             location.replace("/");
+            });
+          }
+        }
+      })
     }
 
     return (
@@ -168,7 +192,8 @@ import { usePathname } from "next/navigation";
                 </Link>
               </li>
               <li className={style.sidebar_item}>
-                <button className={style.sidebar_ExitButton}>
+                <button className={style.sidebar_ExitButton}
+                 onClick={handlerExitPanel}>
                     <span className={style.sidebar_exitButton_icon}>
                         <IoExitOutline/>
                     </span>
@@ -329,7 +354,9 @@ import { usePathname } from "next/navigation";
                 </Link>
               </li>
               <li className={style.sidebar_item}>
-                <button className={style.sidebar_ExitButton}>
+                <button className={style.sidebar_ExitButton}
+                onClick={handlerExitPanel}
+                >
                     <span className={style.sidebar_exitButton_icon}>
                         <IoExitOutline/>
                     </span>
