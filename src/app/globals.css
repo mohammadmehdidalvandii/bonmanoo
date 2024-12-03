@@ -316,3 +316,21 @@ body{
   font-weight: 700;
   color: var(--text-100);
 }
+
+.swal-button--cancel{
+  background-color: red;
+  color: var(--white);
+  transition: all 0.4s linear;
+  &:hover{
+    color: var(--text-100);
+  }
+}
+.swal-button--confirm{
+  background-color: var(--primary);
+  color: var(--white);
+  transition: all 0.4s linear;
+  &:hover{
+    background-color: var(--white);
+    color: var(--text-100);
+  }
+}
