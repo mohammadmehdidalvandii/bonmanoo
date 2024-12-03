@@ -12,7 +12,18 @@ function Payment() {
   const searchParams = useSearchParams();
   const [showDiscount, setShowDiscount] = useState(false);
   const [isGenuine , setIsGenuine] = useState (true)
-  const [isLegal , setIsLegal] = useState (false)
+  const [isLegal , setIsLegal] = useState (false);
+
+
+  const handlerPayOrder =  ()=>{
+    swal({
+      title:"ابتدا باید وارد شوید !",
+      icon:"error",
+      buttons:"متوجه شدم"
+    }).then(()=>{
+    location.replace("/LoginRegister")
+    })
+  }
 
   const totalPriceParam = searchParams.get("totalPrice");
   
@@ -256,7 +267,9 @@ function Payment() {
                         <li className={style.payment_pay_item}>{allPay} تومان</li>
                     </ul>
                 </div>
-                <button className={style.payment_pay_btn}>ثبت سفارش و پرداخت</button>
+                <button className={style.payment_pay_btn}
+                onClick={handlerPayOrder}
+                >ثبت سفارش و پرداخت</button>
             </div>
           </div>
         </div>
