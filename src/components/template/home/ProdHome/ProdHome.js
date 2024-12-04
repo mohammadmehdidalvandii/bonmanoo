@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import style from './ProdHome.module.css';
 import Image from 'next/image';
 import Titles from '@/components/modules/Titles/Titles';
@@ -16,6 +16,16 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 function ProdHome() {
     const swiperRef = useRef(null);
+    const [products , setProducts] = useState([]);
+
+    useEffect(()=>{
+      const getProducts = async ()=>{
+        const res = await fetch("/api/products/");
+        const data = await res.json();
+        setProducts(data)
+      };
+      getProducts()
+    })
   return (
     <section className={style.prodHome}>
         <div className="containers">
@@ -27,16 +37,16 @@ function ProdHome() {
                     <div className={style.prodHome_wrapper}>
                         <Titles
                             subTitle="محصولات خانگی"
-                            title="دانه قهوه اسپرسو"
+                            // title="دانه قهوه اسپرسو"
                         />
-                        <div className={style.prodHome_buttons}>
+                        {/* <div className={style.prodHome_buttons}>
                             <HomeBtn/>
                             <HomeBtn/>
                             <HomeBtn/>
                             <HomeBtn/>
                             <HomeBtn/>
                             <HomeBtn/>
-                        </div>
+                        </div> */}
                     </div>
                     <div className={style.prodHome_products}>
                         <div className="row">
@@ -77,7 +87,18 @@ function ProdHome() {
                                     },
                                   }}
                                   className="mySwiper">
-                                <SwiperSlide>
+                                    {products.map(product=>(
+                                        <SwiperSlide key={product._id}>
+                                        <ProductCart
+                                            id={product._id}
+                                            name={product.name}
+                                            img={product.img[0]}
+                                            imgHover={product.img[1]}
+                                            price={product.price}
+                                        />
+                                    </SwiperSlide>
+                                    ))}
+                                {/* <SwiperSlide>
                                     <ProductCart/>
                                 </SwiperSlide>
                                 <SwiperSlide>
@@ -85,10 +106,7 @@ function ProdHome() {
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <ProductCart/>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <ProductCart/>
-                                </SwiperSlide>
+                                </SwiperSlide> */}
                           </Swiper>
                             </div>
                             <div className="col-12">

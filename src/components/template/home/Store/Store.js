@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './Store.module.css';
 import ProductCart from '@/components/modules/ProductCart/ProductCart';
 // Import Swiper React components
@@ -11,6 +11,16 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import Link from 'next/link';
 function Store() {
+   const [products , setProducts] = useState([]);
+
+   useEffect(()=>{
+     const getProducts = async ()=>{
+       const res = await fetch("/api/products/");
+       const data = await res.json();
+       setProducts(data)
+     };
+     getProducts()
+   })
   return (
     <section className={style.store}>
         <div className="containers">
@@ -19,11 +29,11 @@ function Store() {
                     <div className={style.store_title_buttons}>
                         <h4 className={style.store_title}>فروشگاه بن مانو</h4>
                     </div>
-                    <div className={style.store_buttons}>
-                        {/* active style btn < store_btn_active >  */}
+                    {/* <div className={style.store_buttons}>
+                         active style btn < store_btn_active >  
                         <button className={style.store_btn}>پروفروش ترین محصولات</button>
                         <button className={style.store_btn}>محصولات جدید</button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="row mt-5">
@@ -59,33 +69,17 @@ function Store() {
                   }}
                  className="mySwiper"
                  >
-                         <SwiperSlide>
-                            <ProductCart/>
-                         </SwiperSlide>
-                         <SwiperSlide>
-                            <ProductCart/>
-                         </SwiperSlide>
-                         <SwiperSlide>
-                            <ProductCart/>
-                         </SwiperSlide>
-                         <SwiperSlide>
-                            <ProductCart/>
-                         </SwiperSlide>
-                         <SwiperSlide>
-                            <ProductCart/>
-                         </SwiperSlide>
-                         <SwiperSlide>
-                            <ProductCart/>
-                         </SwiperSlide>
-                         <SwiperSlide>
-                            <ProductCart/>
-                         </SwiperSlide>
-                         <SwiperSlide>
-                            <ProductCart/>
-                         </SwiperSlide>
-                         <SwiperSlide>
-                            <ProductCart/>
-                         </SwiperSlide>
+                       {products.map(product=>(
+                                        <SwiperSlide key={product._id}>
+                                        <ProductCart
+                                            id={product._id}
+                                            name={product.name}
+                                            img={product.img[0]}
+                                            imgHover={product.img[1]}
+                                            price={product.price}
+                                        />
+                                    </SwiperSlide>
+                                    ))}
                 </Swiper>
                 </div>
             </div>

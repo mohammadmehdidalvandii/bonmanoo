@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from "./ProdHurka.module.css";
 import Titles from "@/components/modules/Titles/Titles";
 import Image from "next/image";
@@ -16,6 +16,16 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 function ProdHurka() {
     const swiperRef = useRef(null);
+    const [products , setProducts] = useState([]);
+
+    useEffect(()=>{
+      const getProducts = async ()=>{
+        const res = await fetch("/api/products/");
+        const data = await res.json();
+        setProducts(data)
+      };
+      getProducts()
+    })
   return (
     <section className={style.prodHurka}>
       <div className="containers">
@@ -88,12 +98,15 @@ function ProdHurka() {
             <div className="row">
               <div className="col-12">
                 <div className={style.prodHurka_title_buttons}>
-                  <Titles subTitle="محصولات هورکا" title="قهوه ترکیبی" />
-                  <div className={style.prodHurka_buttons}>
+                  <Titles subTitle="محصولات هورکا"
+                  //  title="قهوه ترکیبی"
+                   
+                   />
+                  {/* <div className={style.prodHurka_buttons}>
                     <HomeBtn />
                     <HomeBtn />
                     <HomeBtn />
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="col-12">
@@ -136,18 +149,17 @@ function ProdHurka() {
                                     },
                                   }}
                                   className="mySwiper">
-                                <SwiperSlide>
-                                    <ProductCart/>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <ProductCart/>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <ProductCart/>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <ProductCart/>
-                                </SwiperSlide>
+                                {products.map(product=>(
+                                        <SwiperSlide key={product._id}>
+                                        <ProductCart
+                                            id={product._id}
+                                            name={product.name}
+                                            img={product.img[0]}
+                                            imgHover={product.img[1]}
+                                            price={product.price}
+                                        />
+                                    </SwiperSlide>
+                                    ))}
                           </Swiper>
                             </div>
                             <div className="col-12">
