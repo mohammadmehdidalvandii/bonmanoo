@@ -1,8 +1,36 @@
+"use client"
 import React from 'react';
 import style from './ContactList.module.css'
+import swal from 'sweetalert';
 
 function ContactList({messages}) {
-  console.log("messages=> ", messages)
+
+  const handlerRemovedMessage = (messageID)=>{
+    console.log("messageID" , messageID)
+      swal({
+        title:"آیا از حذف پیام اطمینان دارید ؟",
+        icon:"error",
+        buttons:["نه","آره"]
+      }).then(async (result)=>{
+        if(result){
+          const res = await fetch(`/api/contact/${messageID}`,{
+            method: "DELETE"
+          });
+          
+          if(res.status === 200 ){
+            swal({
+              title:"پیام مورد نظر شما با موفقیت حذف شد",
+              icon:"success",
+              buttons:"متوجه شدم"
+            }).then(()=>{
+              location.reload()
+            })
+          }
+
+        }
+      })
+  }
+
   return (
     <section className={style.contactList}>
     <div className="container">
@@ -19,7 +47,8 @@ function ContactList({messages}) {
             </tr>
           </thead>
           <tbody>
-            {messages.map((message)=>(
+            
+          {messages.length > 0 ?  messages.map((message)=>(
             <tr key={message._id}>
               <td>{message._id}</td>
               <td>{message.username}</td>
@@ -27,10 +56,14 @@ function ContactList({messages}) {
               <td>{message.phone}</td>
               <td>
                 <button>مشاهده پیام</button>
-                <button>حذف</button>
+                <button
+                  onClick={()=>handlerRemovedMessage(message._id)}
+                >حذف</button>
                 </td>
             </tr>
-            ))}
+            )) : (
+              <span className={style.contactList_empty}>هیج پیام وجود ندارد</span>
+            )}
             {/* می‌توانید ردیف‌های بیشتری اضافه کنید */}
           </tbody>
         </table>

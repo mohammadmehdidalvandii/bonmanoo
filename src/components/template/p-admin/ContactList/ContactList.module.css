@@ -40,3 +40,11 @@
 .contactList_table button:hover {
   background-color: var(--secondary); /* رنگ دکمه در حالت hover */
 }
+.contactList_empty{
+  display: block;
+  margin: 1rem auto;
+  text-align: center;
+  font-family: var(--danaBlack);
+  font-size: 2rem;
+  color: red;
+}
