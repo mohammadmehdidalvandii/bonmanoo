@@ -1,11 +1,17 @@
 import AdminLayout from '@/components/layout/AdminLayout/AdminLayout'
 import ContactList from '@/components/template/p-admin/ContactList/ContactList'
+import connectToDB from '@/config/db'
 import React from 'react'
+import ContactModel from '@/models/Contact'
 
-function page() {
+async function page() {
+  await connectToDB();
+
+  const messages = await ContactModel.find({})
+
   return (
     <AdminLayout>
-        <ContactList/>
+        <ContactList messages={messages}/>
     </AdminLayout>
   )
 }

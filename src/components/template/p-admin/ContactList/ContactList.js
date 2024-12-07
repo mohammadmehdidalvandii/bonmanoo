@@ -1,7 +1,8 @@
 import React from 'react';
 import style from './ContactList.module.css'
 
-function ContactList() {
+function ContactList({messages}) {
+  console.log("messages=> ", messages)
   return (
     <section className={style.contactList}>
     <div className="container">
@@ -12,24 +13,24 @@ function ContactList() {
             <tr>
               <th>شماره ID</th>
               <th>نام </th>
-              <th>تاریخ پیام</th>
               <th>ایمیل</th>
               <th>شماره</th>
               <th>عملیات</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1001</td>
-              <td>علی رضایی</td>
-              <td>1402/01/15</td>
-              <td>ali@gmail.com</td>
-              <td>0912000000</td>
+            {messages.map((message)=>(
+            <tr key={message._id}>
+              <td>{message._id}</td>
+              <td>{message.username}</td>
+              <td>{message.email}</td>
+              <td>{message.phone}</td>
               <td>
                 <button>مشاهده پیام</button>
                 <button>حذف</button>
                 </td>
             </tr>
+            ))}
             {/* می‌توانید ردیف‌های بیشتری اضافه کنید */}
           </tbody>
         </table>
