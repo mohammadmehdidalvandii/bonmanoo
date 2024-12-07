@@ -1,7 +1,8 @@
 import React from 'react'
 import style from './Users.module.css';
 
-function Users() {
+function Users({users}) {
+
   return (
     <section className={style.users}>
     <div className="container">
@@ -19,18 +20,21 @@ function Users() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1001</td>
-              <td>علی رضایی</td>
-              <td>ali@gmail.com</td>
-              <td>0912222222</td>
-              <td>کاربر</td>
-              <td>
-                <button>حذف</button>
-                <button>بن</button>
-                <button>ادمین</button>
-            </td>
-            </tr>
+            {users.map((user)=>(
+               <tr key={user._id}>
+               <td>{user._id}</td>
+               <td>{user.username}</td>
+               <td>{user.email}</td>
+               <td>{user.phone}</td>
+               <td>{user.role}</td>
+               <td>
+                 <button>حذف</button>
+                 <button>بن</button>
+                 <button>ادمین</button>
+             </td>
+             </tr>
+            ))}
+           
             {/* می‌توانید ردیف‌های بیشتری اضافه کنید */}
           </tbody>
         </table>

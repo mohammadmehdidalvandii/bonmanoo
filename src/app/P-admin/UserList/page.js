@@ -1,11 +1,18 @@
 import AdminLayout from '@/components/layout/AdminLayout/AdminLayout'
 import Users from '@/components/template/p-admin/Users/Users'
+import connectToDB from '@/config/db'
 import React from 'react'
+import UserModel from '@/models/User'
 
-function page() {
+
+async function page() {
+  await connectToDB()
+
+const users = await UserModel.find({})
+
   return (
     <AdminLayout>
-       <Users/>
+       <Users users={users}/>
     </AdminLayout>
   )
 }
