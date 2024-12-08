@@ -8,7 +8,7 @@
 import { usePathname } from "next/navigation";
 import swal from "sweetalert";
 
-  function Sidebar() {
+  function Sidebar({role}) {
     const pathName = usePathname();
     const [sidebarMenu , setSidebarMenu ] =useState(false);
     const [activeLink ,  setActiveLink] = useState('/P-user')
@@ -64,122 +64,127 @@ import swal from "sweetalert";
                     className={style.sidebar_logoImg}
                   />
                 </Link>
-                {/* sidebar p-user */}
-                {/* <ul className={style.sidebar_items}>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-user" className={activeLink === '/P-user' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <LuLayoutGrid />{" "}
-                      </span>
-                      <span className={style.sidebar_item_text}>داشبورد</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-user/Orders" className={activeLink === '/P-user/Orders' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <FaShoppingBasket />
-                      </span>
-                      <span className={style.sidebar_item_text}>سفارش</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-user/Edit-Address" className={activeLink === '/P-user/Edit-Address' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <IoLocationOutline />
-                      </span>
-                      <span className={style.sidebar_item_text}>آدرس</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-user/Referral" className={activeLink === '/P-user/Referral' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <IoSettingsOutline />
-                      </span>
-                      <span className={style.sidebar_item_text}>کد معرف</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-user/Credit-History" className={activeLink === '/P-user/Credit-History' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <IoSettingsOutline />
-                      </span>
-                      <span className={style.sidebar_item_text}>
-                        تاریخچه اعتبارها
-                      </span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-user/Edit-Account" className={activeLink === '/P-user/Edit-Account' ? style.sidebar_item_linkActive :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <IoSettingsOutline />
-                      </span>
-                      <span className={style.sidebar_item_text}>تنظیمات</span>
-                    </Link>
-                  </li>
-                </ul> */}
+                {role !== "ADMIN" ? (
+                   <ul className={style.sidebar_items}>
+                   <li className={style.sidebar_item}>
+                     <Link href="/P-user" className={activeLink === '/P-user' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                       <span className={style.sidebar_item_icon}>
+                         <LuLayoutGrid />{" "}
+                       </span>
+                       <span className={style.sidebar_item_text}>داشبورد</span>
+                     </Link>
+                   </li>
+                   <li className={style.sidebar_item}>
+                     <Link href="/P-user/Orders" className={activeLink === '/P-user/Orders' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                       <span className={style.sidebar_item_icon}>
+                         <FaShoppingBasket />
+                       </span>
+                       <span className={style.sidebar_item_text}>سفارش</span>
+                     </Link>
+                   </li>
+                   <li className={style.sidebar_item}>
+                     <Link href="/P-user/Edit-Address" className={activeLink === '/P-user/Edit-Address' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                       <span className={style.sidebar_item_icon}>
+                         <IoLocationOutline />
+                       </span>
+                       <span className={style.sidebar_item_text}>آدرس</span>
+                     </Link>
+                   </li>
+                   <li className={style.sidebar_item}>
+                     <Link href="/P-user/Referral" className={activeLink === '/P-user/Referral' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                       <span className={style.sidebar_item_icon}>
+                         <IoSettingsOutline />
+                       </span>
+                       <span className={style.sidebar_item_text}>کد معرف</span>
+                     </Link>
+                   </li>
+                   <li className={style.sidebar_item}>
+                     <Link href="/P-user/Credit-History" className={activeLink === '/P-user/Credit-History' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                       <span className={style.sidebar_item_icon}>
+                         <IoSettingsOutline />
+                       </span>
+                       <span className={style.sidebar_item_text}>
+                         تاریخچه اعتبارها
+                       </span>
+                     </Link>
+                   </li>
+                   <li className={style.sidebar_item}>
+                     <Link href="/P-user/Edit-Account" className={activeLink === '/P-user/Edit-Account' ? style.sidebar_item_linkActive :style.sidebar_item_link}>
+                       <span className={style.sidebar_item_icon}>
+                         <IoSettingsOutline />
+                       </span>
+                       <span className={style.sidebar_item_text}>تنظیمات</span>
+                     </Link>
+                   </li>
+                 </ul> 
+                ) : (
+                    <ul className={style.sidebar_items}>
+                    <li className={style.sidebar_item}>
+                      <Link href="/P-admin" className={activeLink === '/P-admin' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                        <span className={style.sidebar_item_icon}>
+                          <LuLayoutGrid />{" "}
+                        </span>
+                        <span className={style.sidebar_item_text}>داشبورد</span>
+                      </Link>
+                    </li>
+                    <li className={style.sidebar_item}>
+                      <Link href="/P-admin/Orders" className={activeLink === '/P-admin/Orders' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                        <span className={style.sidebar_item_icon}>
+                          <FaShoppingBasket />
+                        </span>
+                        <span className={style.sidebar_item_text}>سفارش ها</span>
+                      </Link>
+                    </li>
+                    <li className={style.sidebar_item}>
+                      <Link href="/P-admin/UserList" className={activeLink === '/P-admin/UserList' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                        <span className={style.sidebar_item_icon}>
+                          <FaUsers/>
+                        </span>
+                        <span className={style.sidebar_item_text}>کاربران</span>
+                      </Link>
+                    </li>
+                    <li className={style.sidebar_item}>
+                      <Link href="/P-admin/ListProducts" className={activeLink === '/P-admin/ListProducts' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                        <span className={style.sidebar_item_icon}>
+                          <IoSettingsOutline />
+                        </span>
+                        <span className={style.sidebar_item_text}>محصولات</span>
+                      </Link>
+                    </li>
+                    <li className={style.sidebar_item}>
+                      <Link href="/P-admin/ContactUs" className={activeLink === '/P-admin/ContactUs' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                        <span className={style.sidebar_item_icon}>
+                          <IoSettingsOutline />
+                        </span>
+                        <span className={style.sidebar_item_text}>
+                           تماس ها
+                        </span>
+                      </Link>
+                    </li>
+                    <li className={style.sidebar_item}>
+                      <Link href="/P-admin/Seller" className={activeLink === '/P-admin/Seller' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                        <span className={style.sidebar_item_icon}>
+                          <FaChartPie/>
+                        </span>
+                        <span className={style.sidebar_item_text}>
+                            تاریخچه فروش
+                        </span>
+                      </Link>
+                    </li>
+                    <li className={style.sidebar_item}>
+                      <Link href="/P-admin/Edit-Account" className={activeLink === '/P-admin/Edit-Account' ? style.sidebar_item_linkActive :style.sidebar_item_link}>
+                        <span className={style.sidebar_item_icon}>
+                          <IoSettingsOutline />
+                        </span>
+                        <span className={style.sidebar_item_text}>تنظیمات</span>
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+              
+                
                 {/* sidebar p-admin */}
-                <ul className={style.sidebar_items}>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-admin" className={activeLink === '/P-admin' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <LuLayoutGrid />{" "}
-                      </span>
-                      <span className={style.sidebar_item_text}>داشبورد</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-admin/Orders" className={activeLink === '/P-admin/Orders' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <FaShoppingBasket />
-                      </span>
-                      <span className={style.sidebar_item_text}>سفارش ها</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-admin/UserList" className={activeLink === '/P-admin/UserList' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <FaUsers/>
-                      </span>
-                      <span className={style.sidebar_item_text}>کاربران</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-admin/ListProducts" className={activeLink === '/P-admin/ListProducts' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <IoSettingsOutline />
-                      </span>
-                      <span className={style.sidebar_item_text}>محصولات</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-admin/ContactUs" className={activeLink === '/P-admin/ContactUs' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <IoSettingsOutline />
-                      </span>
-                      <span className={style.sidebar_item_text}>
-                         تماس ها
-                      </span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-admin/Seller" className={activeLink === '/P-admin/Seller' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <FaChartPie/>
-                      </span>
-                      <span className={style.sidebar_item_text}>
-                          تاریخچه فروش
-                      </span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-admin/Edit-Account" className={activeLink === '/P-admin/Edit-Account' ? style.sidebar_item_linkActive :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <IoSettingsOutline />
-                      </span>
-                      <span className={style.sidebar_item_text}>تنظیمات</span>
-                    </Link>
-                  </li>
-                </ul>
+              
               </div>
             </div>
             <ul className={style.sidebar_actionLinkBtn}>
@@ -226,122 +231,125 @@ import swal from "sweetalert";
                     className={style.sidebar_logoImg}
                   />
                 </Link>
-                   {/* sidebar p-user */}
-                {/* <ul className={style.sidebar_items}>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-user" className={activeLink === '/P-user' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <LuLayoutGrid />{" "}
-                      </span>
-                      <span className={style.sidebar_item_text}>داشبورد</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-user/Orders" className={activeLink === '/P-user/Orders' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <FaShoppingBasket />
-                      </span>
-                      <span className={style.sidebar_item_text}>سفارش</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-user/Edit-Address" className={activeLink === '/P-user/Edit-Address' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <IoLocationOutline />
-                      </span>
-                      <span className={style.sidebar_item_text}>آدرس</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-user/Referral" className={activeLink === '/P-user/Referral' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <IoSettingsOutline />
-                      </span>
-                      <span className={style.sidebar_item_text}>کد معرف</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-user/Credit-History" className={activeLink === '/P-user/Credit-History' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <IoSettingsOutline />
-                      </span>
-                      <span className={style.sidebar_item_text}>
-                        تاریخچه اعتبارها
-                      </span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-user/Edit-Account" className={activeLink === '/P-user/Edit-Account' ? style.sidebar_item_linkActive :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <IoSettingsOutline />
-                      </span>
-                      <span className={style.sidebar_item_text}>تنظیمات</span>
-                    </Link>
-                  </li>
-                </ul> */}
-                {/* sidebar p-admin */}
-                <ul className={style.sidebar_items}>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-admin" className={activeLink === '/P-admin' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <LuLayoutGrid />{" "}
-                      </span>
-                      <span className={style.sidebar_item_text}>داشبورد</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-admin/Orders" className={activeLink === '/P-admin/Orders' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <FaShoppingBasket />
-                      </span>
-                      <span className={style.sidebar_item_text}>سفارش ها</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-admin/UserList" className={activeLink === '/P-admin/UserList' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <FaUsers/>
-                      </span>
-                      <span className={style.sidebar_item_text}>کاربران</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-admin/ListProducts" className={activeLink === '/P-admin/ListProducts' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <IoSettingsOutline />
-                      </span>
-                      <span className={style.sidebar_item_text}>محصولات</span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-admin/ContactUs" className={activeLink === '/P-admin/ContactUs' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <IoSettingsOutline />
-                      </span>
-                      <span className={style.sidebar_item_text}>
-                         تماس ها
-                      </span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-admin/Seller" className={activeLink === '/P-admin/Seller' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <FaChartPie/>
-                      </span>
-                      <span className={style.sidebar_item_text}>
-                          تاریخچه فروش
-                      </span>
-                    </Link>
-                  </li>
-                  <li className={style.sidebar_item}>
-                    <Link href="/P-admin/Edit-Account" className={activeLink === '/P-admin/Edit-Account' ? style.sidebar_item_linkActive :style.sidebar_item_link}>
-                      <span className={style.sidebar_item_icon}>
-                        <IoSettingsOutline />
-                      </span>
-                      <span className={style.sidebar_item_text}>تنظیمات</span>
-                    </Link>
-                  </li>
-                </ul>
+
+                {role !== "ADMIN" ? (
+                   <ul className={style.sidebar_items}>
+                   <li className={style.sidebar_item}>
+                     <Link href="/P-user" className={activeLink === '/P-user' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                       <span className={style.sidebar_item_icon}>
+                         <LuLayoutGrid />{" "}
+                       </span>
+                       <span className={style.sidebar_item_text}>داشبورد</span>
+                     </Link>
+                   </li>
+                   <li className={style.sidebar_item}>
+                     <Link href="/P-user/Orders" className={activeLink === '/P-user/Orders' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                       <span className={style.sidebar_item_icon}>
+                         <FaShoppingBasket />
+                       </span>
+                       <span className={style.sidebar_item_text}>سفارش</span>
+                     </Link>
+                   </li>
+                   <li className={style.sidebar_item}>
+                     <Link href="/P-user/Edit-Address" className={activeLink === '/P-user/Edit-Address' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                       <span className={style.sidebar_item_icon}>
+                         <IoLocationOutline />
+                       </span>
+                       <span className={style.sidebar_item_text}>آدرس</span>
+                     </Link>
+                   </li>
+                   <li className={style.sidebar_item}>
+                     <Link href="/P-user/Referral" className={activeLink === '/P-user/Referral' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                       <span className={style.sidebar_item_icon}>
+                         <IoSettingsOutline />
+                       </span>
+                       <span className={style.sidebar_item_text}>کد معرف</span>
+                     </Link>
+                   </li>
+                   <li className={style.sidebar_item}>
+                     <Link href="/P-user/Credit-History" className={activeLink === '/P-user/Credit-History' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                       <span className={style.sidebar_item_icon}>
+                         <IoSettingsOutline />
+                       </span>
+                       <span className={style.sidebar_item_text}>
+                         تاریخچه اعتبارها
+                       </span>
+                     </Link>
+                   </li>
+                   <li className={style.sidebar_item}>
+                     <Link href="/P-user/Edit-Account" className={activeLink === '/P-user/Edit-Account' ? style.sidebar_item_linkActive :style.sidebar_item_link}>
+                       <span className={style.sidebar_item_icon}>
+                         <IoSettingsOutline />
+                       </span>
+                       <span className={style.sidebar_item_text}>تنظیمات</span>
+                     </Link>
+                   </li>
+                 </ul> 
+                ) : (
+                    <ul className={style.sidebar_items}>
+                    <li className={style.sidebar_item}>
+                      <Link href="/P-admin" className={activeLink === '/P-admin' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                        <span className={style.sidebar_item_icon}>
+                          <LuLayoutGrid />{" "}
+                        </span>
+                        <span className={style.sidebar_item_text}>داشبورد</span>
+                      </Link>
+                    </li>
+                    <li className={style.sidebar_item}>
+                      <Link href="/P-admin/Orders" className={activeLink === '/P-admin/Orders' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                        <span className={style.sidebar_item_icon}>
+                          <FaShoppingBasket />
+                        </span>
+                        <span className={style.sidebar_item_text}>سفارش ها</span>
+                      </Link>
+                    </li>
+                    <li className={style.sidebar_item}>
+                      <Link href="/P-admin/UserList" className={activeLink === '/P-admin/UserList' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                        <span className={style.sidebar_item_icon}>
+                          <FaUsers/>
+                        </span>
+                        <span className={style.sidebar_item_text}>کاربران</span>
+                      </Link>
+                    </li>
+                    <li className={style.sidebar_item}>
+                      <Link href="/P-admin/ListProducts" className={activeLink === '/P-admin/ListProducts' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                        <span className={style.sidebar_item_icon}>
+                          <IoSettingsOutline />
+                        </span>
+                        <span className={style.sidebar_item_text}>محصولات</span>
+                      </Link>
+                    </li>
+                    <li className={style.sidebar_item}>
+                      <Link href="/P-admin/ContactUs" className={activeLink === '/P-admin/ContactUs' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                        <span className={style.sidebar_item_icon}>
+                          <IoSettingsOutline />
+                        </span>
+                        <span className={style.sidebar_item_text}>
+                           تماس ها
+                        </span>
+                      </Link>
+                    </li>
+                    <li className={style.sidebar_item}>
+                      <Link href="/P-admin/Seller" className={activeLink === '/P-admin/Seller' ? style.sidebar_item_linkActive  :style.sidebar_item_link}>
+                        <span className={style.sidebar_item_icon}>
+                          <FaChartPie/>
+                        </span>
+                        <span className={style.sidebar_item_text}>
+                            تاریخچه فروش
+                        </span>
+                      </Link>
+                    </li>
+                    <li className={style.sidebar_item}>
+                      <Link href="/P-admin/Edit-Account" className={activeLink === '/P-admin/Edit-Account' ? style.sidebar_item_linkActive :style.sidebar_item_link}>
+                        <span className={style.sidebar_item_icon}>
+                          <IoSettingsOutline />
+                        </span>
+                        <span className={style.sidebar_item_text}>تنظیمات</span>
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+
               </div>
             </div>
             <ul className={style.sidebar_actionLinkBtn}>

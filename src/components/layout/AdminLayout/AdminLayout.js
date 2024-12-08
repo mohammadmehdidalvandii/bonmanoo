@@ -27,7 +27,7 @@ async function AdminLayout({children}) {
      <section className='adminLayout'>
     <div className="row">
       <div className="col-lg-2 col-md-12 col-sm-12">
-        <Sidebar/>
+        <Sidebar role={user?.role}/>
       </div>
       <div className="col-lg-10 col-md-12 col-sm-12">
         <TopBar 
