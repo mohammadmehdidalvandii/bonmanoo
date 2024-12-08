@@ -2,7 +2,7 @@ import React from 'react';
 import style from './TopBar.module.css';
 import { FaUser } from 'react-icons/fa';
 
-function TopBar() {
+function TopBar({name , role}) {
   return (
    <section className={style.topBar}>
         <div className={style.topBar_container}>
@@ -13,10 +13,10 @@ function TopBar() {
                             <FaUser/>
                         </span>
                         <span className={style.topBar_account_name}>
-                            محمدمهدی دالوندی
+                            {name}
                         </span>
                         <span className={style.topBar_account_side}></span>
-                        <span className={style.topBar_account_role}>مشتری</span>
+                        <span className={style.topBar_account_role}>{role}</span>
                     </div>
                 </div>
                 <div className={style.topBar_left}>

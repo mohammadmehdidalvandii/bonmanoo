@@ -9,6 +9,8 @@ import { cookies } from 'next/headers';
 async function UserLayout({children}) {
   const user = await authUser();
 
+  console.log("user =>" , user)
+
   const token = cookies().get("token");
   if(!token){
     return redirect("/LoginRegister")
@@ -26,7 +28,12 @@ async function UserLayout({children}) {
         <Sidebar/>
       </div>
       <div className="col-lg-10 col-md-12 col-sm-12">
-        <TopBar/>
+        <TopBar 
+        name={user?.username}
+        role={
+          user?.role === "ADMIN" ? "ادمین " : "مشتری"
+        }
+        />
        {children}
       </div>
     </div>
