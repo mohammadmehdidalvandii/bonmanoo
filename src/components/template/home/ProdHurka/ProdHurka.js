@@ -186,7 +186,7 @@ function ProdHurka() {
                                             <IoIosArrowBack/>
                                         </button>
                                     </div>
-                                    <Link href="#"className="showMore">مشاهده محصولات بیشتر</Link>
+                                    <Link href="/Products"className="showMore">مشاهده محصولات بیشتر</Link>
                                 </div>
                             </div>
                         </div>
