@@ -4,6 +4,15 @@ import style from './ContactList.module.css'
 import swal from 'sweetalert';
 
 function ContactList({messages}) {
+  console.log("mess" , messages)
+
+  const handlerShowMessage = (messageSubject , msg )=>{
+    swal({
+      title:messageSubject,
+      text:msg,
+      buttons:"خواندم"
+    })
+  }
 
   const handlerRemovedMessage = (messageID)=>{
     console.log("messageID" , messageID)
@@ -55,7 +64,9 @@ function ContactList({messages}) {
               <td>{message.email}</td>
               <td>{message.phone}</td>
               <td>
-                <button>مشاهده پیام</button>
+                <button
+                onClick={()=>handlerShowMessage(message.subject, message.message)}
+                >مشاهده پیام</button>
                 <button
                   onClick={()=>handlerRemovedMessage(message._id)}
                 >حذف</button>
