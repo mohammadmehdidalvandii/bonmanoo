@@ -30,7 +30,12 @@ async function AdminLayout({children}) {
         <Sidebar/>
       </div>
       <div className="col-lg-10 col-md-12 col-sm-12">
-        <TopBar/>
+        <TopBar 
+            name={user?.username}
+            role={
+              user?.role === "ADMIN" ? "ادمین " : "مشتری"
+            }
+        />
        {children}
       </div>
     </div>

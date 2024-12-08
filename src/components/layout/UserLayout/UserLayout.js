@@ -9,7 +9,6 @@ import { cookies } from 'next/headers';
 async function UserLayout({children}) {
   const user = await authUser();
 
-  console.log("user =>" , user)
 
   const token = cookies().get("token");
   if(!token){
